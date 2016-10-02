@@ -1,7 +1,7 @@
 $(document).ready(function() {
   const ROW_VACIO = "<tr><td colspan='3'>Vacio Ameo!</td></tr>";
 
-  $('.page').load('templates/principal.tpl');
+  $('.page').load('principal.html');
 
   $(".navbar-nav li:not(.dropdown)").click(function() {
    $('.navbar-toggle').click();
