@@ -8,29 +8,29 @@ $(document).ready(function() {
   })
 
   $(".index").click(function() {
-    $('.page').load('principal.html');
+    $('.page').load('templates/principal.tpl');
   });
 
   $(".nosotros").click(function() {
-    $('.page').load('nosotros.html');
+    $('.page').load('templates/nosotros.tpl');
   });
 
   $(".contacto").click(function() {
-    $('.page').load('contacto.html');
+    $('.page').load('templates/contacto.tpl');
   });
 
   $(".productos").click(function() {
-    $('.page').load('productos.html');
+    $('.page').load('templates/productos.tpl');
   });
 
   $(".venta").click(function() {
-    $('.page').load('venta.html');
+    $('.page').load('templates/venta.tpl');
     //crear();
     get_info_tabla();
   });
 
   $(".rubiapilsen").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#pilsen').offset().top -50
      }, 'slow');
@@ -38,7 +38,7 @@ $(document).ready(function() {
   });
 
   $(".weissbier").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#weissbier').offset().top -50
      }, 'slow');
@@ -46,7 +46,7 @@ $(document).ready(function() {
   });
 
   $(".honeybeer").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#honey').offset().top -50
      }, 'slow');
@@ -54,7 +54,7 @@ $(document).ready(function() {
   });
 
   $(".roja").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#roja').offset().top
      }, 'slow');
@@ -62,7 +62,7 @@ $(document).ready(function() {
   });
 
   $(".negrabock").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#bock').offset().top
      }, 'slow');
@@ -70,7 +70,7 @@ $(document).ready(function() {
   });
 
   $(".negradoppelbock").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#doppel').offset().top
      }, 'slow');
@@ -78,7 +78,7 @@ $(document).ready(function() {
   });
 
   $(".rauchbier").click(function() {
-    $('.page').load('productos.html', function () {
+    $('.page').load('templates/productos.tpl', function () {
       $('html, body').animate({
          scrollTop: $('#rauch').offset().top
      } , 'slow');
