@@ -27,6 +27,14 @@ $(document).ready(function() {
     $('.page').load('templates/productosprueba.tpl');
   });
 
+  $('.productos_prueba').click(function(){
+event.preventDefault();
+$.get( "index.php?action=mostrar_productos", function(data) {
+  console.log(data);
+  $('.prodprueba').html(data);
+});
+});
+
   $(".venta").click(function() {
     $('.page').load('templates/venta.tpl');
     //crear();

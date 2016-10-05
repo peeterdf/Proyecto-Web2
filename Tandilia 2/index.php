@@ -11,7 +11,7 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
 }
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
-  case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
+  case ConfigApp::$ACTION_INICIAR:
     $controller->iniciar();
     break;
   case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
@@ -19,6 +19,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     break;
   case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
     $controller->eliminar();
+    break;
+  case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
+    $controller->mostrarproductos();
     break;
   default:
     $controller->iniciar();

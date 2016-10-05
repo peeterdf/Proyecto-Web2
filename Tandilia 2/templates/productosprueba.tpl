@@ -10,7 +10,7 @@
     <div class="col-md-10 col-md-offset-1">
         <img src="./images/baner.jpg" class="img-responsive thumbnail" alt="cerveza">
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 prodprueba" >
       {include file="productoslista.tpl"}
     </div>
 </article>
