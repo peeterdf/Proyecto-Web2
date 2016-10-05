@@ -18,6 +18,8 @@ class ProductosController
     $this->vista->mostrar($productos);
   }
 
+  
+
 
 }
  ?>

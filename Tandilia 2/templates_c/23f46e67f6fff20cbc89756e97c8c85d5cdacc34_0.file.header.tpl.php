@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-27 22:01:27
+/* Smarty version 3.1.30, created on 2016-10-03 04:56:52
   from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ead01789ac97_52517191',
+  'unifunc' => 'content_57f1c8f48cb405_77527691',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '23f46e67f6fff20cbc89756e97c8c85d5cdacc34' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\header.tpl',
-      1 => 1475005298,
+      1 => 1475460322,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57ead01789ac97_52517191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_57f1c8f48cb405_77527691 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,6 +86,7 @@ function content_57ead01789ac97_52517191 (Smarty_Internal_Template $_smarty_tpl)
                       <li class="rauchbier"><a href="#">RauchBier</a></li>
                     </ul>
                   </li>
+                  <li class="productos_prueba"><a href="#">Productos prueba</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

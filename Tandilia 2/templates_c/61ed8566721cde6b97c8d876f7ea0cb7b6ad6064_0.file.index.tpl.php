@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-27 22:01:27
+/* Smarty version 3.1.30, created on 2016-10-03 04:56:52
   from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ead0174743a5_95241625',
+  'unifunc' => 'content_57f1c8f48948f8_31397411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_57ead0174743a5_95241625 (Smarty_Internal_Template $_smarty_tpl) {
+function content_57f1c8f48948f8_31397411 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'foo'), 0, false);
 ?>
 

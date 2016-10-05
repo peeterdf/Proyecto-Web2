@@ -23,6 +23,10 @@ $(document).ready(function() {
     $('.page').load('templates/productos.tpl');
   });
 
+  $(".productos_prueba").click(function() {
+    $('.page').load('templates/productosprueba.tpl');
+  });
+
   $(".venta").click(function() {
     $('.page').load('templates/venta.tpl');
     //crear();
