@@ -10,13 +10,12 @@ class ProductosView
     $this->smarty = new Smarty();
   }
 
-  function mostrar($productos){
-    $this->smarty->assign('productos',$productos);
+  function mostrar(){
     $this->smarty->display('index.tpl');
   }
   function mostrarproductos($productos){
     $this->smarty->assign('productos',$productos);
-    $this->smarty->display('productoslista.tpl');
+    $this->smarty->display('productosprueba.tpl');
   }
 
 }

@@ -7,15 +7,13 @@ class ProductosController
   private $vista;
   private $modelo;
 
-  function __construct()
-  {
+  function __construct(){
     $this->modelo = new ProductosModel();
     $this->vista = new ProductosView();
   }
 
   function iniciar(){
-    $productos = $this->modelo->getProductos();
-    $this->vista->mostrar($productos);
+    $this->vista->mostrar();
   }
 
   function mostrarproductos(){
@@ -23,7 +21,18 @@ class ProductosController
     $this->vista->mostrarproductos($productos);
   }
 
+  function mostrarMensaje($mensaje, $tipo){
+      $this->smarty->assign('mensaje',$mensaje);
+      $this->smarty->assign('tipoMensaje',$tipo);
+    }
 
+  function guardar(){
+      $producto = $_POST['producto'];
+      $this->modelo->crearProducto($producto);
+      $this->vista->mostrarMensaje("La tarea se creo con imagen y todo!", "success");
+
+      $this->mostrarproductos();
+    }
 
 }
  ?>

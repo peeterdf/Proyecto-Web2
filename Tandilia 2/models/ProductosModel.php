@@ -20,5 +20,15 @@ class ProductosModel
     return $productos;
   }
 
+  function crearProducto($producto){
+  //Agrega en la ultima posicion del arreglo
+  $sentencia = $this->db->prepare("INSERT INTO producto(nombre) VALUES(?)");
+  $sentencia->execute(array($producto));
+  $id_prodcuto = $this->db->lastInsertId();
+
+  return $id_tarea;
+  //$this->tareas[] = $tarea;
+}
+
 }
  ?>

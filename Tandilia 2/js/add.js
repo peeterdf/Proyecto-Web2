@@ -23,15 +23,12 @@ $(document).ready(function() {
     $('.page').load('templates/productos.tpl');
   });
 
-  $(".productos_prueba").click(function() {
-    $('.page').load('templates/productosprueba.tpl');
-  });
 
-  $('.productos_prueba').click(function(){
+
+  $(".productos_prueba").click(function(){
 event.preventDefault();
 $.get( "index.php?action=mostrar_productos", function(data) {
-  console.log(data);
-  $('.prodprueba').html(data);
+    $('.page').html(data);
 });
 });
 
@@ -102,35 +99,31 @@ $(document).on('click','.btn-agrega',function() {
   $('.mostrar').toggle();
 });
 
-$(document).on('click','.btn-enviar',function () {
-    var cerveza = $("#Tcerveza").val();
-    var precioMAY = $("#Pmayorista").val();
-    var precioMIN = $("#Pminorista").val();
-    create_info(cerveza,precioMAY,precioMIN);
-    $('.formulario')[0].reset();
+ $('.btn-enviar').click(function(){
+   event.preventDefault();
+   $.post( "index.php?action=guardar_producto",$("#formProductos").serialize(), function(data) {
+     $('.productos_prueba').html(data);
+     $('.formulario')[0].reset();
+ });
+ });
+
+$('.eliminarTarea').click(function(){
+event.preventDefault();
+$.get( "index.php?action=eliminar_tarea",{ id_tarea: $(this).attr("data-idtarea") }, function(data) {
+  $('#listaTareas').html(data);
+  $('#tarea').val('');
 });
 
-$(document).on('click','.boton', function () {
+});
+
+$(document).on('click','.boton-eliminar', function () {
   var valor = $(this).attr("value");
   eliminar(valor);
 });
 
-function eliminar (id) {
-  $.ajax ({
-    url: "http://web-unicen.herokuapp.com/api/delete/" + id,
-    method: "DELETE",
-    success: function() {
-      $('tbody').empty();
-      get_info_tabla();
-    },
-    error: function(jqxml, status, errorThrown) {
-      console.log(errorThrown);
-    }
-  });
-}
 
   function crearRow (info) {
-    return "<tr><td>"+info.thing.cerveza+"</td><td>"+info.thing.precio_may+"</td><td>"+info.thing.precio_min+"</td><td><button class='boton btn btn-default' value="+info._id+">Eliminar</button></td></tr>";
+    return "<tr><td>"+info.thing.cerveza+"</td><td>"+info.thing.precio_may+"</td><td>"+info.thing.precio_min+"</td><td><button class='eliminarProducto btn btn-default' value="+info._id+">Eliminar</button></td></tr>";
  }
 
 function get_info_tabla() {
@@ -152,36 +145,4 @@ function get_info_tabla() {
       alert ('Error');
     }
   });
- }
-
- function create_info(cerveza, precio_may, precio_min) {
-   event.preventDefault();
-   var grupo = 21;
-   var Tcerveza = cerveza;
-   var mayorista = precio_may;
-   var minorista = precio_min;
-   var info = {
-     "group" : grupo,
-     "thing":{
-     "cerveza" : Tcerveza,
-     "precio_may" : mayorista,
-     "precio_min" : minorista
-   }
-   };
-
-   $.ajax({
-     url: "http://web-unicen.herokuapp.com/api/create",
-     method: "POST",
-     dataType: 'JSON',
-     contentType: "application/json; charset=utf-8",
-     data : JSON.stringify(info),
-     success: function(resultData) {
-       console.log(resultData);
-       $('tbody').empty();
-       get_info_tabla();
-     },
-     error: function(jqxml, status, errorThrown) {
-         console.log(errorThrown);
-     }
-   });
  }
