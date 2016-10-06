@@ -23,6 +23,11 @@ class ProductosController
     $this->vista->mostrarproductos($productos);
   }
 
+  function pedro(){
+    $productos = $this->modelo->getProductos();
+    $this->vista->mostrarproductos($productos);
+  }
+
 
 
 
