@@ -23,11 +23,5 @@ class ProductosController
     $this->vista->mostrarproductos($productos);
   }
 
-  function mostrarputos(){
-    $productos = $this->modelo->getProductos();
-    $this->vista->mostrarproductos($productos);
-  }
-
-
 }
  ?>
