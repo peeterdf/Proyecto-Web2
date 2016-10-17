@@ -21,17 +21,11 @@ class ProductosController
     $this->vista->mostrarproductos($productos);
   }
 
-  function mostrarMensaje($mensaje, $tipo){
-      $this->smarty->assign('mensaje',$mensaje);
-      $this->smarty->assign('tipoMensaje',$tipo);
-    }
-
   function guardar(){
-      $producto = $_POST['producto'];
-      $this->modelo->crearProducto($producto);
-      $this->vista->mostrarMensaje("La tarea se creo con imagen y todo!", "success");
-
-      $this->mostrarproductos();
+      $producto = $_POST;
+      $this->modelo->addProducto($producto);
+      $productos = $this->modelo->getProductos();
+      $this->vista->mostrarproductoslista($productos);
     }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-06 23:38:07
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\productosprueba.tpl" */
+/* Smarty version 3.1.30, created on 2016-10-17 23:07:10
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\productosprueba.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57f6c43f6d1d85_41194935',
+  'unifunc' => 'content_58053d7ec49547_47930087',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd0bc19ac62c279f9a277c4cb8f46b3c8ef1d6534' => 
+    'a14a3eb55a838efa4189646b872cce1b3c866ec3' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\productosprueba.tpl',
-      1 => 1475789502,
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\productosprueba.tpl',
+      1 => 1476738380,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:productoslista.tpl' => 1,
   ),
 ),false)) {
-function content_57f6c43f6d1d85_41194935 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58053d7ec49547_47930087 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
    <h1>Tener en cuenta al tomar una cerveza</h1>
@@ -40,7 +40,7 @@ function content_57f6c43f6d1d85_41194935 (Smarty_Internal_Template $_smarty_tpl)
 " role="alert"><?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
 </div>
     <?php }?>
-    <div class="col-md-12 prodprueba" >
+    <div class="col-md-12 prodprueba" id="listaProducto" >
       <?php $_smarty_tpl->_subTemplateRender("file:productoslista.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -52,13 +52,13 @@ function content_57f6c43f6d1d85_41194935 (Smarty_Internal_Template $_smarty_tpl)
     <div class="mostrar col-md-12">
       <form class="form-horizontal formulario"  id="formProductos" action="guardar_producto" method="post" enctype="multipart/form-data">
         <label class="control-label">Cerveza</label>
-        <input class="" type="text" name="name" id="Tcerveza">
+        <input class="" type="text" name="nombre" id="Tcerveza">
         <label class="control-label">Descripcion</label>
-        <input class="" type="textarea" name="name" id="Cdescripcion">
+        <input class="" type="textarea" name="descripcion" id="Cdescripcion">
         <label class="control-label">Precio Mayorista</label>
-        <input class="" type="number" name="name" id="Pmayorista">
+        <input class="" type="number" name="precio_may" id="Pmayorista">
         <label class="control-label">Precio Minorista</label>
-        <input class="" type="number" name="name" id="Pminorista">
+        <input class="" type="number" name="precio_min" id="Pminorista">
         <input class="btn-enviar btn btn-default" type="submit" name="Enviar">
       </form>
     </div>

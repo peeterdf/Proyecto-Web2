@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-03 04:56:52
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\footer.tpl" */
+/* Smarty version 3.1.30, created on 2016-10-17 22:32:03
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57f1c8f48ea804_85507589',
+  'unifunc' => 'content_5805354363cac6_53557695',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '102e79c407f06d74124b083d9a2532ccb7ba7956' => 
+    'f688c6ed49728e3490b19bf06a6ee29d36575c7a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\footer.tpl',
-      1 => 1475005287,
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\footer.tpl',
+      1 => 1475780540,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57f1c8f48ea804_85507589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5805354363cac6_53557695 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <?php echo '<script'; ?>

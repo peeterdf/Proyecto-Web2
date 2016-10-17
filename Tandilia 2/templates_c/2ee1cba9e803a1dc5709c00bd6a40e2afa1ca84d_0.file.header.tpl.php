@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-07 00:01:04
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\header.tpl" */
+/* Smarty version 3.1.30, created on 2016-10-18 00:20:37
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57f6c9a04b05e3_09545834',
+  'unifunc' => 'content_58054eb53268a6_22696564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '23f46e67f6fff20cbc89756e97c8c85d5cdacc34' => 
+    '2ee1cba9e803a1dc5709c00bd6a40e2afa1ca84d' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\header.tpl',
-      1 => 1475791261,
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\header.tpl',
+      1 => 1476742521,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57f6c9a04b05e3_09545834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58054eb53268a6_22696564 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,6 @@ function content_57f6c9a04b05e3_09545834 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <base href="//localhost/proyectos/Proyecto-Web2/Tandilia%202/" />
     <title>Cervecería - Tandilia</title>
 
     <!-- Bootstrap -->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-06 00:20:46
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\productoslista.tpl" */
+/* Smarty version 3.1.30, created on 2016-10-18 00:16:12
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\productoslista.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57f57cbeca68a1_35652795',
+  'unifunc' => 'content_58054dac571047_33083934',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1aac2b9102764ecfbd0e1ee43a835d87b13d097b' => 
+    '98b2d79ce24ac4bcf8310a15857e0db849c11850' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\productoslista.tpl',
-      1 => 1475462307,
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\productoslista.tpl',
+      1 => 1476742543,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57f57cbeca68a1_35652795 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58054dac571047_33083934 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <ul class="media-list">
   <?php

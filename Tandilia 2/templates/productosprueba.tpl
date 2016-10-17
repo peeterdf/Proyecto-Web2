@@ -13,7 +13,7 @@
     {if isset($mensaje)}
       <div class="alert alert-{$tipoMensaje}" role="alert">{$mensaje}</div>
     {/if}
-    <div class="col-md-12 prodprueba" >
+    <div class="col-md-12 prodprueba" id="listaProducto" >
       {include file="productoslista.tpl"}
     </div>
     <div class="row">
@@ -23,13 +23,13 @@
     <div class="mostrar col-md-12">
       <form class="form-horizontal formulario"  id="formProductos" action="guardar_producto" method="post" enctype="multipart/form-data">
         <label class="control-label">Cerveza</label>
-        <input class="" type="text" name="name" id="Tcerveza">
+        <input class="" type="text" name="nombre" id="Tcerveza">
         <label class="control-label">Descripcion</label>
-        <input class="" type="textarea" name="name" id="Cdescripcion">
+        <input class="" type="textarea" name="descripcion" id="Cdescripcion">
         <label class="control-label">Precio Mayorista</label>
-        <input class="" type="number" name="name" id="Pmayorista">
+        <input class="" type="number" name="precio_may" id="Pmayorista">
         <label class="control-label">Precio Minorista</label>
-        <input class="" type="number" name="name" id="Pminorista">
+        <input class="" type="number" name="precio_min" id="Pminorista">
         <input class="btn-enviar btn btn-default" type="submit" name="Enviar">
       </form>
     </div>

@@ -7,8 +7,6 @@ class ProductosModel
   function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;dbname=cerveceriatandilia;charset=utf8', 'root', '');
-
-    $this->productos = ['rubia','negra','roja'];
   }
   function getProductos(){
     $sentencia = $this->db->prepare( "select * from producto");
@@ -20,13 +18,14 @@ class ProductosModel
     return $productos;
   }
 
-  function crearProducto($producto){
+  function addProducto($producto){
+  //print_r ($producto);
   //Agrega en la ultima posicion del arreglo
-  $sentencia = $this->db->prepare("INSERT INTO producto(nombre) VALUES(?)");
-  $sentencia->execute(array($producto));
-  $id_prodcuto = $this->db->lastInsertId();
+  $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio_may, precio_min) VALUES(?,?,?,?)");
+  $sentencia->execute(array($producto["nombre"], $producto["descripcion"], $producto["precio_may"], $producto["precio_min"]));
+  $id_producto = $this->db->lastInsertId();
 
-  return $id_tarea;
+  return $id_producto;
   //$this->tareas[] = $tarea;
 }
 
