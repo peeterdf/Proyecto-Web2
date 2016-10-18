@@ -16,12 +16,17 @@ class ProductosView
 
   function mostrarproductos($productos){
     $this->smarty->assign('productos',$productos);
-    $this->smarty->display('productosprueba.tpl');
+    $this->smarty->display('productos.tpl');
   }
 
   function mostrarproductoslista($productos){
     $this->smarty->assign('productos',$productos);
     $this->smarty->display('productoslista.tpl');
+  }
+
+  function mostrarabm($productos){
+    $this->smarty->assign('productos',$productos);
+    $this->smarty->display('abm.tpl');
   }
 
 }

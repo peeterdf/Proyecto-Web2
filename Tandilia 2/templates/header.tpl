@@ -58,7 +58,7 @@
                       <li class="rauchbier"><a href="#">RauchBier</a></li>
                     </ul>
                   </li>
-                  <li class="productos_prueba"><a href="#">Productos prueba</a></li>
+                  <li class="abm"><a href="#">ABM</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

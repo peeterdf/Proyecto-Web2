@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-17 23:07:10
-  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\productosprueba.tpl" */
+/* Smarty version 3.1.30, created on 2016-10-18 23:54:11
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\productos.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58053d7ec49547_47930087',
+  'unifunc' => 'content_58069a0312ae27_66156219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a14a3eb55a838efa4189646b872cce1b3c866ec3' => 
+    '58556c77323f81335a86ebdfe28a79819e37087a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\productosprueba.tpl',
-      1 => 1476738380,
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\productos.tpl',
+      1 => 1476826131,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:productoslista.tpl' => 1,
   ),
 ),false)) {
-function content_58053d7ec49547_47930087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58069a0312ae27_66156219 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
    <h1>Tener en cuenta al tomar una cerveza</h1>
@@ -44,24 +44,6 @@ function content_58053d7ec49547_47930087 (Smarty_Internal_Template $_smarty_tpl)
       <?php $_smarty_tpl->_subTemplateRender("file:productoslista.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    </div>
-    <div class="row">
-
-    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agrega btn btn-default">Agregar</button>
-
-    <div class="mostrar col-md-12">
-      <form class="form-horizontal formulario"  id="formProductos" action="guardar_producto" method="post" enctype="multipart/form-data">
-        <label class="control-label">Cerveza</label>
-        <input class="" type="text" name="nombre" id="Tcerveza">
-        <label class="control-label">Descripcion</label>
-        <input class="" type="textarea" name="descripcion" id="Cdescripcion">
-        <label class="control-label">Precio Mayorista</label>
-        <input class="" type="number" name="precio_may" id="Pmayorista">
-        <label class="control-label">Precio Minorista</label>
-        <input class="" type="number" name="precio_min" id="Pminorista">
-        <input class="btn-enviar btn btn-default" type="submit" name="Enviar">
-      </form>
-    </div>
     </div>
 </article>
 <?php }

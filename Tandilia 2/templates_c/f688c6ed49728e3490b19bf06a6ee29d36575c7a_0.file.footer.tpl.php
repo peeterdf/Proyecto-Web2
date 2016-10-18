@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-17 22:32:03
+/* Smarty version 3.1.30, created on 2016-10-18 23:45:43
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5805354363cac6_53557695',
+  'unifunc' => 'content_580698078bbe81_90921911',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5805354363cac6_53557695 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580698078bbe81_90921911 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <?php echo '<script'; ?>

@@ -26,6 +26,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
     $controller->mostrarproductos();
     break;
+  case ConfigApp::$ACTION_CARGAR_ABM:
+    $controller->cargarabm();
+    break;
   default:
     $controller->iniciar();
     break;

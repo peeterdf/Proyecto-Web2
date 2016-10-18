@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-18 00:16:12
+/* Smarty version 3.1.30, created on 2016-10-18 23:45:45
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\productoslista.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58054dac571047_33083934',
+  'unifunc' => 'content_580698097f3a33_80668733',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58054dac571047_33083934 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580698097f3a33_80668733 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <ul class="media-list">
   <?php

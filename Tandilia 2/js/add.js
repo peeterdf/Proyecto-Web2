@@ -19,13 +19,15 @@ $(document).ready(function() {
     $('.page').load('templates/contacto.tpl');
   });
 
-  $(".productos").click(function() {
-    $('.page').load('templates/productos.tpl');
+  $(".abm").click(function() {
+    $.get( "index.php?action=cargar_abm", function(data) {
+        $('.page').html(data);
+    });
   });
 
 
 
-  $(".productos_prueba").click(function(){
+  $(".productos").click(function(){
 event.preventDefault();
 $.get( "index.php?action=mostrar_productos", function(data) {
     $('.page').html(data);
@@ -36,62 +38,6 @@ $.get( "index.php?action=mostrar_productos", function(data) {
     $('.page').load('templates/venta.tpl');
     //crear();
     get_info_tabla();
-  });
-
-  $(".rubiapilsen").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#pilsen').offset().top -50
-     }, 'slow');
-    });
-  });
-
-  $(".weissbier").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#weissbier').offset().top -50
-     }, 'slow');
-    });
-  });
-
-  $(".honeybeer").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#honey').offset().top -50
-     }, 'slow');
-    });
-  });
-
-  $(".roja").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#roja').offset().top
-     }, 'slow');
-    });
-  });
-
-  $(".negrabock").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#bock').offset().top
-     }, 'slow');
-    });
-  });
-
-  $(".negradoppelbock").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#doppel').offset().top
-     }, 'slow');
-    });
-  });
-
-  $(".rauchbier").click(function() {
-    $('.page').load('templates/productos.tpl', function () {
-      $('html, body').animate({
-         scrollTop: $('#rauch').offset().top
-     } , 'slow');
-    });
   });
 })
 
@@ -116,11 +62,10 @@ $(document).on('click','.btn-enviar',function () {
 //     )};
  //});
 
-$('.eliminarTarea').click(function(){
+$('.eliminarProducto').click(function(){
 event.preventDefault();
-$.get( "index.php?action=eliminar_tarea",{ id_tarea: $(this).attr("data-idtarea") }, function(data) {
-  $('#listaTareas').html(data);
-  $('#tarea').val('');
+$.get( "index.php?action=eliminar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
+  $('.page').html(data);
 });
 
 });
