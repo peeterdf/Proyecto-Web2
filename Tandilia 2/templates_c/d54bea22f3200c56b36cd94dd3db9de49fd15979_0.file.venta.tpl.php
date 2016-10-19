@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-10-19 19:43:53
+  from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\venta.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5807b0d9e7ea68_09691944',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd54bea22f3200c56b36cd94dd3db9de49fd15979' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\venta.tpl',
+      1 => 1476899031,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5807b0d9e7ea68_09691944 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <article>
     <div class="row">
       <div class="table-responsive col-md-10 ">
@@ -11,13 +35,26 @@
             </tr>
           </thead>
           <tbody>
-            {foreach from=$productos item=producto}
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'producto');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
+?>
             <tr>
-              <td>{$producto["nombre"]}  ({$producto["nombre_categoria"]})</td>
-              <td>{$producto["precio_may"]}</td>
-              <td>{$producto["precio_min"]}</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['producto']->value["nombre"];?>
+  (<?php echo $_smarty_tpl->tpl_vars['producto']->value["nombre_categoria"];?>
+)</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['producto']->value["precio_may"];?>
+</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['producto']->value["precio_min"];?>
+</td>
             </tr>
-            {/foreach}
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
           </tbody>
           </table>
         </div>
@@ -74,3 +111,5 @@
       </div>
       </div>
 </article>
+<?php }
+}

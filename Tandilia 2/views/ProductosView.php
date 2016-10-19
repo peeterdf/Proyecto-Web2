@@ -14,20 +14,30 @@ class ProductosView
     $this->smarty->display('index.tpl');
   }
 
-  function mostrarproductos($productos){
+  function mostrarproductos($productos) {
     $this->smarty->assign('productos',$productos);
     $this->smarty->display('productos.tpl');
   }
 
-  function mostrarproductoslista($productos){
+  function mostrarTablaVentas($productos) {
+    $this->smarty->assign('productos',$productos);
+    $this->smarty->display('venta.tpl');
+  }
+
+  function mostrarproductoslista($productos)  {
     $this->smarty->assign('productos',$productos);
     $this->smarty->display('productoslista.tpl');
   }
 
-  function mostrarabm($productos){
+  function mostrarabm($productos, $categorias){
     $this->smarty->assign('productos',$productos);
+    $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('abm.tpl');
   }
 
+  function mostrarMensaje($mensaje, $tipo){
+    $this->smarty->assign('mensaje',$mensaje);
+    $this->smarty->assign('tipoMensaje',$tipo);
+  }
 }
  ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-18 23:45:43
+/* Smarty version 3.1.30, created on 2016-10-19 14:41:26
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580698078a6612_03583171',
+  'unifunc' => 'content_580769f68798c1_55515125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ee1cba9e803a1dc5709c00bd6a40e2afa1ca84d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\header.tpl',
-      1 => 1476826437,
+      1 => 1476880878,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580698078a6612_03583171 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580769f68798c1_55515125 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,18 +74,7 @@ function content_580698078a6612_03583171 (Smarty_Internal_Template $_smarty_tpl)
                   <li class="nosotros"><a href="#">Nosotros <span class="sr-only">(current)</span></a></li>
                   <li class="contacto"><a href="#">Contacto</a></li>
                   <li class="venta"><a href="#">Venta</a></li>
-                  <li class="dropdown productos">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
-                    <ul class="dropdown-menu deslizable">
-                      <li class="rubiapilsen"><a href="#">Pilsen</a></li>
-                      <li class="weissbier"><a href="#">WeissBier</a></li>
-                      <li class="honeybeer"><a href="#">HoneyBeer</a></li>
-                      <li class="roja"><a href="#">Roja</a></li>
-                      <li class="negrabock"><a href="#">Bock</a></li>
-                      <li class="negradoppelbock"><a href="#">Doppelbock</a></li>
-                      <li class="rauchbier"><a href="#">RauchBier</a></li>
-                    </ul>
-                  </li>
+                  <li class="productos"><a href="#">Productos</a></li>
                   <li class="abm"><a href="#">ABM</a></li>
                 </ul>
             </div>

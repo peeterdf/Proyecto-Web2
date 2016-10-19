@@ -35,10 +35,10 @@ class ProductosController
     return $imagenesVerificadas;
   }
 
-  function guardar(){
+  function guardar() {
       $producto = $_POST;
       if(isset($_FILES['imagenes'])){
-      $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
+        $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
       if(count($imagenesVerificadas)>0){
         $this->modelo->addProducto($producto,$imagenesVerificadas);
         $this->vista->mostrarMensaje("La tarea se creo con imagen y todo!", "success");
@@ -48,13 +48,26 @@ class ProductosController
     }  else{
         $this->vista->mostrarMensaje("La imagen es requerida","danger");
     }
-    $this->cargarabm();
+  $this->cargarabm();
   }
 
     function cargarabm(){
       $productos = $this->modelo->getProductos();
-      $this->vista->mostrarabm($productos);
+      $categorias = $this->modelo->getCategorias();
+      $this->vista->mostrarabm($productos, $categorias);
     }
+
+    function muestraTablaVentas(){
+      $productos = $this->modelo->getProductos();
+      $this->vista->mostrarTablaVentas($productos);
+    }
+
+    function eliminar(){
+    $key = $_GET['id_producto'];
+    $this->modelo->eliminarProducto($key);
+    $tareas = $this->modelo->getTareas();
+    $this->vista->getLista($tareas);
+  }
 
 }
  ?>

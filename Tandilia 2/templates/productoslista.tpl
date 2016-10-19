@@ -9,6 +9,9 @@
     <div class="media-body">
       <h4 class="media-heading" >{$producto['nombre']}</h4>
     <p>
+      {$producto['nombre_categoria']}
+    </p>
+    <p>
       {$producto['descripcion']}
     </p>
     </div>

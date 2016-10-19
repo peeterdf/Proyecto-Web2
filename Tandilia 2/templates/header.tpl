@@ -46,18 +46,7 @@
                   <li class="nosotros"><a href="#">Nosotros <span class="sr-only">(current)</span></a></li>
                   <li class="contacto"><a href="#">Contacto</a></li>
                   <li class="venta"><a href="#">Venta</a></li>
-                  <li class="dropdown productos">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
-                    <ul class="dropdown-menu deslizable">
-                      <li class="rubiapilsen"><a href="#">Pilsen</a></li>
-                      <li class="weissbier"><a href="#">WeissBier</a></li>
-                      <li class="honeybeer"><a href="#">HoneyBeer</a></li>
-                      <li class="roja"><a href="#">Roja</a></li>
-                      <li class="negrabock"><a href="#">Bock</a></li>
-                      <li class="negradoppelbock"><a href="#">Doppelbock</a></li>
-                      <li class="rauchbier"><a href="#">RauchBier</a></li>
-                    </ul>
-                  </li>
+                  <li class="productos"><a href="#">Productos</a></li>
                   <li class="abm"><a href="#">ABM</a></li>
                 </ul>
             </div>
