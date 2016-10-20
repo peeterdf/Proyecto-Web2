@@ -51,6 +51,13 @@ class ProductosController
   $this->cargarabm();
   }
 
+  function cargartabla(){
+    $productos = $this->modelo->getProductos();
+    $categorias = $this->modelo->getCategorias();
+    $this->vista->getTabla($productos, $categorias);
+  }
+
+
     function cargarabm(){
       $productos = $this->modelo->getProductos();
       $categorias = $this->modelo->getCategorias();
@@ -62,11 +69,26 @@ class ProductosController
       $this->vista->mostrarTablaVentas($productos);
     }
 
+    function modificarproducto(){
+      $key = $_GET['id_producto'];
+
+    }
+
+    function guardarCategoria() {
+      $categoria = $_POST;
+      $this->modelo->addCategoria($categoria);
+      $this->cargarabm();
+    }
+
+    function eliminarCategoria() {
+      $id_categoria = $_GET['id_categoria'];
+      $this->modelo->eliminarCategoria($id_categoria);
+    }
+
     function eliminar(){
-    $key = $_GET['id_producto'];
-    $this->modelo->eliminarProducto($key);
-    $tareas = $this->modelo->getTareas();
-    $this->vista->getLista($tareas);
+    $id_producto = $_GET['id_producto'];
+    $this->modelo->eliminarProducto($id_producto);
+    $this->cargarabm();
   }
 
 }

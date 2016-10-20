@@ -26,10 +26,14 @@ class ProductosModel
     return $categorias;
   }
 
+  function addCategoria($categoria) {
+    $sentencia = $this->db->prepare("INSERT INTO categoria(nombre) VALUES(?) ");
+    $sentencia->execute(array($categoria["nombre"]));
+  }
+
   function addProducto($producto, $imagenes) {
-    echo "asdasd";
-    $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio_may, precio_min, fk_id_categoria) VALUES(?,?,?,?,?)");
-    $sentencia->execute(array($producto["nombre"], $producto["descripcion"], $producto["precio_may"], $producto["precio_min"], $producto["fk_id_categoria"]));
+    $sentencia = $this->db->prepare("INSERT INTO producto(fk_id_categoria, nombre, descripcion, precio_may, precio_min) VALUES(?,?,?,?,?)");
+    $sentencia->execute(array($producto["fk_id_categoria"], $producto["nombre"], $producto["descripcion"], $producto["precio_may"], $producto["precio_min"]));
     $id_producto = $this->db->lastInsertId();
 
   //Copiarla del lugar temporal al definitivo.
@@ -40,15 +44,17 @@ class ProductosModel
      $insertImagen->execute(array($path,$id_producto));
     }
 
-  return $id_producto;
+    //return $id_producto;
   }
 
-  function eliminarTarea($id_tarea){
+  function eliminarCategoria($id_categoria) {
+    $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id_categoria=? ");
+    $sentencia->execute(array($id_categoria));
+  }
 
-    $sentencia = $this->db->prepare("delete from producto where id_tarea=?");
-    $sentencia->execute(array($id_tarea));
-    return $sentencia->rowCount();
-
+  function eliminarProducto($id_producto) {
+    $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_producto=? ");
+    $sentencia->execute(array($id_producto));
   }
 
 }

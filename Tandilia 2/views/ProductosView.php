@@ -35,6 +35,12 @@ class ProductosView
     $this->smarty->display('abm.tpl');
   }
 
+  function getTabla($productos, $categorias){
+    $this->smarty->assign('productos',$productos);
+    $this->smarty->assign('categorias',$categorias);
+    $this->smarty->display('abmtabla.tpl');
+  }
+
   function mostrarMensaje($mensaje, $tipo){
     $this->smarty->assign('mensaje',$mensaje);
     $this->smarty->assign('tipoMensaje',$tipo);

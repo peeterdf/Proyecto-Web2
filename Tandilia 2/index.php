@@ -26,12 +26,21 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
     $controller->mostrarproductos();
     break;
+  case ConfigApp::$ACTION_MODIFICAR_PRODUCTO:
+    $controller->modificarproducto();
+    break;
   case ConfigApp::$ACTION_CARGAR_ABM:
     $controller->cargarabm();
     break;
   case ConfigApp::$ACTION_CARGAR_TABLA_VENTAS:
     $controller->muestraTablaVentas();
     break;
+  case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
+    $controller->guardarCategoria();
+      break;
+  case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
+    $controller->eliminarCategoria();
+      break;
   default:
     $controller->iniciar();
     break;

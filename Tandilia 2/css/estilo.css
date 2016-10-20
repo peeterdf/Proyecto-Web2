@@ -10,10 +10,21 @@ body {
 .plus{
   color: transparent;
 }
-
+.eliminarCategoria{
+  text-decoration: none;
+  color: white;
+}
 
 /*Div oculto de "venta"*/
-.mostrar {
+.mostrarprod {
+  color: black;
+  display: none;
+}
+.mostrarcat {
+  color: black;
+  display: none;
+}
+.borrarcat {
   color: black;
   display: none;
 }
