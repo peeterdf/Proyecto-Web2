@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-20 02:39:37
+/* Smarty version 3.1.30, created on 2016-10-20 04:52:41
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\abmtabla.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5808124968d333_46021389',
+  'unifunc' => 'content_58083179f3b6c4_93439190',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85dbd654faabf197626b7267fbeb0b69cfba0116' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\abmtabla.tpl',
-      1 => 1476923914,
+      1 => 1476931956,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5808124968d333_46021389 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58083179f3b6c4_93439190 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <table class="table table-bordered">
   <thead>
@@ -30,7 +30,6 @@ function content_5808124968d333_46021389 (Smarty_Internal_Template $_smarty_tpl)
       <th>Descripcion</th>
       <th>Precio minorista</th>
       <th>Precio mayorista</th>
-      <th>Modificar</th>
       <th>Eliminar</th>
     </tr>
   </thead>
@@ -51,7 +50,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 </td>
       <td><?php echo $_smarty_tpl->tpl_vars['producto']->value["precio_may"];?>
 </td>
-      <td>boton modificar</td>
       <td>  <a class="eliminarProducto" href="#" data-idproducto="<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
 "><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
     </tr>

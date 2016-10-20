@@ -9,7 +9,7 @@
 
   {include file="abmtabla.tpl"}
 </div>
-
+  
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaprod btn btn-default">Agregar Producto</button>
 
     <div class="mostrarprod col-md-12">
@@ -55,6 +55,8 @@
       </form>
 
     </div>
+
+
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregacat btn btn-default">Agregar Categoria</button>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-20 04:37:31
+/* Smarty version 3.1.30, created on 2016-10-20 04:52:41
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58082deb952339_96759007',
+  'unifunc' => 'content_58083179f0a2f0_39491859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9223a5f52e4a7c97a2e7192b459ae8b3084e648c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\abm.tpl',
-      1 => 1476931049,
+      1 => 1476931937,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:abmtabla.tpl' => 1,
   ),
 ),false)) {
-function content_58082deb952339_96759007 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58083179f0a2f0_39491859 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
 
@@ -38,7 +38,7 @@ function content_58082deb952339_96759007 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
 </div>
-
+  
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaprod btn btn-default">Agregar Producto</button>
 
     <div class="mostrarprod col-md-12">
@@ -95,6 +95,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       </form>
 
     </div>
+
+
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregacat btn btn-default">Agregar Categoria</button>
 
