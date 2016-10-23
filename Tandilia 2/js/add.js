@@ -54,12 +54,29 @@ $(document).on('click','.btn-borrarcat',function() {
 //$(document).on('click','.btn-enviarprod',function () {
   // event.preventDefault();
   // $.post( "index.php?action=guardar_producto",$("#formProductos").serialize(), function(data) {
-  //   $('.tablaabm').html(data);
+  //   $('.page').html(data);
      //$('producto').val('');
      //$('.formulario')[0].reset();
- //});
- //});
+// });
+// });
+ $(document).on("submit", ".formularioabm", function(event)
+ {
+     event.preventDefault();
+     var url=$(this).attr("href");
+     $.ajax({
+         url: url,
+         type: $(this).attr("method"),
+         data: new FormData(this),
+         processData: false,
+         contentType: false,
+         success: function (data)
+         {
+           $('.page').html(data);
+         },
 
+     });
+
+ });
 
  //$(document).on('click','.btn-enviar',function () {
 //     $.post("index.php?action=guardar_producto",$("#formProductos").serialize(), function(data) {
@@ -71,7 +88,7 @@ $(document).on('click','.btn-borrarcat',function() {
  $(document).on('click','.eliminarProducto', function(){
    event.preventDefault();
    $.get( "index.php?action=eliminar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
-  //$('.page').html(data);
+  $('.page').html(data);
   //$('#listaProducto').html(data);
   //$('#producto').val('');
   });

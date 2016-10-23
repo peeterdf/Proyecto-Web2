@@ -41,7 +41,6 @@ class ProductosController
         $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
       if(count($imagenesVerificadas)>0){
         $this->modelo->addProducto($producto,$imagenesVerificadas);
-        $this->vista->mostrarMensaje("La tarea se creo con imagen y todo!", "success");
       }else{
         $this->vista->mostrarMensaje("Error con las imagenes", "danger");
       }
