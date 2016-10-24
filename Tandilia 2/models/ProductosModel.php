@@ -31,6 +31,20 @@ class ProductosModel
     $sentencia->execute(array($categoria["nombre"]));
   }
 
+  function eliminarProducto($id_producto) {
+    $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_producto=? ");
+    $sentencia->execute(array($id_producto));
+  }
+
+  function editarProducto($id_producto,$precio_may,$precio_min) {
+    print_r($id_producto);
+    print_r($precio_min);
+    print_r($precio_may);
+    $sentencia = $this->db->prepare("UPDATE producto SET precio_min='$precio_min', precio_may='$precio_may'WHERE id_producto=?");
+    $sentencia->execute();
+    $id_producto = $this->db->lastInsertId();
+  }
+
   function addProducto($producto, $imagenes) {
     $sentencia = $this->db->prepare("INSERT INTO producto(fk_id_categoria, nombre, descripcion, precio_may, precio_min) VALUES(?,?,?,?,?)");
     $sentencia->execute(array($producto["fk_id_categoria"], $producto["nombre"], $producto["descripcion"], $producto["precio_may"], $producto["precio_min"]));
@@ -43,19 +57,11 @@ class ProductosModel
       $insertImagen = $this->db->prepare("INSERT INTO imagen(path,fk_id_producto) VALUES(?,?)");
      $insertImagen->execute(array($path,$id_producto));
     }
-
-    //return $id_producto;
   }
 
   function eliminarCategoria($id_categoria) {
     $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id_categoria=? ");
     $sentencia->execute(array($id_categoria));
   }
-
-  function eliminarProducto($id_producto) {
-    $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_producto=? ");
-    $sentencia->execute(array($id_producto));
-  }
-
 }
  ?>

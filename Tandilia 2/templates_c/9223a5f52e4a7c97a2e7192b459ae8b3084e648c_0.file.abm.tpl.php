@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-20 04:52:41
+/* Smarty version 3.1.30, created on 2016-10-24 03:33:42
   from "C:\xampp\htdocs\TP-ESPECIAL-WEB2\Proyecto-Web2\Tandilia 2\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58083179f0a2f0_39491859',
+  'unifunc' => 'content_580d64f6ee3780_46756125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9223a5f52e4a7c97a2e7192b459ae8b3084e648c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP-ESPECIAL-WEB2\\Proyecto-Web2\\Tandilia 2\\templates\\abm.tpl',
-      1 => 1476931937,
+      1 => 1477265200,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:abmtabla.tpl' => 1,
   ),
 ),false)) {
-function content_58083179f0a2f0_39491859 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580d64f6ee3780_46756125 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
 
@@ -38,11 +38,11 @@ function content_58083179f0a2f0_39491859 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
 </div>
-  
+
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaprod btn btn-default">Agregar Producto</button>
 
     <div class="mostrarprod col-md-12">
-      <form class="form-horizontal formulario"  id="formProductos" action="index.php?action=guardar_producto" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal formularioabm"  id="formProductos" href="index.php?action=guardar_producto" method="post" enctype="multipart/form-data">
         <div class="form-group">
         <label class="col-sm-2 control-label">Cerveza</label>
         <input class="" type="text" name="nombre" id="Tcerveza">
@@ -71,15 +71,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         <div class="form-group">
         <label class="col-sm-2 control-label">Descripcion</label>
-        <input class="" type="textarea" name="descripcion" id="Cdescripcion">
+        <input class="" type="textarea" name="descripcion" id="Cdescripcion" value="sadasdasd">
          </div>
         <div class="form-group">
         <label class="col-sm-2 control-label">Precio Mayorista</label>
-        <input class="" type="number" name="precio_may" id="Pmayorista">
+        <input class="" type="number" name="precio_may" id="Pmayorista" value="123">
          </div>
         <div class="form-group">
         <label class="col-sm-2 control-label">Precio Minorista</label>
-        <input class="" type="number" name="precio_min" id="Pminorista">
+        <input class="" type="number" name="precio_min" id="Pminorista" value="123">
         </div>
 
         <div class="form-group">
@@ -95,13 +95,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       </form>
 
     </div>
-
-
-
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregacat btn btn-default">Agregar Categoria</button>
 
     <div class="mostrarcat col-md-12">
-      <form class="form-horizontal formulario" action="index.php?action=guardar_categoria" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal formularioabm" href="index.php?action=guardar_categoria" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label class="col-sm-2 control-label">Nombre</label>
           <input class="" type="text" name="nombre" required value="">
@@ -141,9 +138,41 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           </ul>
       </form>
 
+      </div>
     </div>
-</div>
 
+    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-editaprod btn btn-default">Editar Producto</button>
+
+    <div class="editaprod col-md-12">
+      <form class="form-horizontal formEdit"  id="formProductos" href="" method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-10 col-md-offset-1">
+        <label class="col-sm-2 control-label">Precio Mayorista</label>
+        <input class="" type="number" name="precio_may" id="Pmayorista" value="">
+         </div>
+        <div class="form-group col-md-10 col-md-offset-1">
+          <label class="col-sm-2 control-label">Precio Minorista</label>
+          <input class="" type="number" name="precio_min" id="Pminorista" value="">
+        </div>
+        <select class="col-md-5 col-md-offset-1" name="prod_id">
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'producto');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
+?>
+          <option data-idedit="$producto['id_producto']}"><?php echo $_smarty_tpl->tpl_vars['producto']->value["nombre"];?>
+</option>
+          <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+        </select>
+          <div class="form-group col-md-5 col-md-offset-1">
+            <input class="btn-editaprod btn btn-default editarProducto" type="submit" name="Enviar">
+          </div>
+      </form>
+    </div>
 </article>
 <?php }
 }

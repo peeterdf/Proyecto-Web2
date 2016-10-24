@@ -68,9 +68,13 @@ class ProductosController
       $this->vista->mostrarTablaVentas($productos);
     }
 
-    function modificarproducto(){
-      $key = $_GET['id_producto'];
-
+    function editarProducto(){
+      if(!empty($_POST['precio_min']) && !empty($_POST['precio_may'])) {
+        $id_producto = $_POST['id_producto'];
+        $precio_min = $_POST['precio_min'];
+        $precio_may = $_POST['precio_may'];
+        $this->modelo->editarProducto($id_producto,$precio_may,$precio_min);
+        }
     }
 
     function guardarCategoria() {
