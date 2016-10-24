@@ -16,22 +16,11 @@ body {
 }
 
 /*Div oculto de "venta"*/
-.mostrarprod {
+.ocultarabm {
   color: black;
   display: none;
 }
-.editaprod {
-  color: black;
-  display: none;
-}
-.mostrarcat {
-  color: black;
-  display: none;
-}
-.borrarcat {
-  color: black;
-  display: none;
-}
+
 
 .formulario {
   margin: 10px;

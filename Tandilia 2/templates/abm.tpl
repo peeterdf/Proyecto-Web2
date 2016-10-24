@@ -12,7 +12,7 @@
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaprod btn btn-default">Agregar Producto</button>
 
-    <div class="mostrarprod col-md-12">
+    <div class="ocultarabm mostrarprod col-md-12">
       <form class="form-horizontal formularioabm"  id="formProductos" href="index.php?action=guardar_producto" method="post" enctype="multipart/form-data">
         <div class="form-group">
         <label class="col-sm-2 control-label">Cerveza</label>
@@ -57,7 +57,7 @@
     </div>
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregacat btn btn-default">Agregar Categoria</button>
 
-    <div class="mostrarcat col-md-12">
+    <div class="ocultarabm mostrarcat col-md-12">
       <form class="form-horizontal formularioabm" href="index.php?action=guardar_categoria" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label class="col-sm-2 control-label">Nombre</label>
@@ -74,7 +74,7 @@
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-borrarcat btn btn-default">Eliminar Categoria</button>
 
-    <div class="borrarcat col-md-10 col-md-offset-1 ">
+    <div class="ocultarabm borrarcat col-md-10 col-md-offset-1 ">
       <form class="form-horizontal formulario"  id="formProductos"  method="post" enctype="multipart/form-data">
 
         <div class="form-group">
@@ -92,8 +92,13 @@
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-editaprod btn btn-default">Editar Producto</button>
 
-    <div class="editaprod col-md-12">
-      <form class="form-horizontal formEdit"  id="formProductos" href="" method="post" enctype="multipart/form-data">
+    <div class="ocultarabm editaprod col-md-12">
+      <form class="form-horizontal  formularioabm"  id="formProductos" href="index.php?action=editar_producto" method="post" enctype="multipart/form-data">
+        <select class="col-md-5 col-md-offset-1"  name="id_producto">
+          {foreach from=$productos item=producto}
+          <option  value="{$producto['id_producto']}">{$producto["nombre"]}</option>
+          {/foreach}
+        </select>
         <div class="form-group col-md-10 col-md-offset-1">
         <label class="col-sm-2 control-label">Precio Mayorista</label>
         <input class="" type="number" name="precio_may" id="Pmayorista" value="">
@@ -102,11 +107,7 @@
           <label class="col-sm-2 control-label">Precio Minorista</label>
           <input class="" type="number" name="precio_min" id="Pminorista" value="">
         </div>
-        <select class="col-md-5 col-md-offset-1" name="prod_id">
-          {foreach from=$productos item=producto}
-          <option data-idedit="$producto['id_producto']}">{$producto["nombre"]}</option>
-          {/foreach}
-        </select>
+
           <div class="form-group col-md-5 col-md-offset-1">
             <input class="btn-editaprod btn btn-default editarProducto" type="submit" name="Enviar">
           </div>

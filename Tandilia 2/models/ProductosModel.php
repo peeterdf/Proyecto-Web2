@@ -37,12 +37,8 @@ class ProductosModel
   }
 
   function editarProducto($id_producto,$precio_may,$precio_min) {
-    print_r($id_producto);
-    print_r($precio_min);
-    print_r($precio_may);
     $sentencia = $this->db->prepare("UPDATE producto SET precio_min='$precio_min', precio_may='$precio_may'WHERE id_producto=?");
-    $sentencia->execute();
-    $id_producto = $this->db->lastInsertId();
+    $sentencia->execute(array($id_producto));
   }
 
   function addProducto($producto, $imagenes) {

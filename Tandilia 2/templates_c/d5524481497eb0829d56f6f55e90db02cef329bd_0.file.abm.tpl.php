@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-23 18:04:14
+/* Smarty version 3.1.30, created on 2016-10-24 06:51:23
   from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580cdf7eeea864_86135080',
+  'unifunc' => 'content_580d934b9bb0c7_19496219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd5524481497eb0829d56f6f55e90db02cef329bd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\abm.tpl',
-      1 => 1477238582,
+      1 => 1477284677,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:abmtabla.tpl' => 1,
   ),
 ),false)) {
-function content_580cdf7eeea864_86135080 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580d934b9bb0c7_19496219 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
 
@@ -41,7 +41,7 @@ function content_580cdf7eeea864_86135080 (Smarty_Internal_Template $_smarty_tpl)
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaprod btn btn-default">Agregar Producto</button>
 
-    <div class="mostrarprod col-md-12">
+    <div class="ocultarabm mostrarprod col-md-12">
       <form class="form-horizontal formularioabm"  id="formProductos" href="index.php?action=guardar_producto" method="post" enctype="multipart/form-data">
         <div class="form-group">
         <label class="col-sm-2 control-label">Cerveza</label>
@@ -95,12 +95,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       </form>
 
     </div>
-
-
-
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregacat btn btn-default">Agregar Categoria</button>
 
-    <div class="mostrarcat col-md-12">
+    <div class="ocultarabm mostrarcat col-md-12">
       <form class="form-horizontal formularioabm" href="index.php?action=guardar_categoria" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label class="col-sm-2 control-label">Nombre</label>
@@ -117,7 +114,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-borrarcat btn btn-default">Eliminar Categoria</button>
 
-    <div class="borrarcat col-md-10 col-md-offset-1 ">
+    <div class="ocultarabm borrarcat col-md-10 col-md-offset-1 ">
       <form class="form-horizontal formulario"  id="formProductos"  method="post" enctype="multipart/form-data">
 
         <div class="form-group">
@@ -141,9 +138,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           </ul>
       </form>
 
+      </div>
     </div>
-</div>
 
+    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-editaprod btn btn-default">Editar Producto</button>
+
+    <div class="ocultarabm editaprod col-md-12">
+      <form class="form-horizontal  formularioabm"  id="formProductos" href="index.php?action=editar_producto" method="post" enctype="multipart/form-data">
+        <select class="col-md-5 col-md-offset-1"  name="id_producto">
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'producto');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
+?>
+          <option  value="<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
+"><?php echo $_smarty_tpl->tpl_vars['producto']->value["nombre"];?>
+</option>
+          <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+        </select>
+        <div class="form-group col-md-10 col-md-offset-1">
+        <label class="col-sm-2 control-label">Precio Mayorista</label>
+        <input class="" type="number" name="precio_may" id="Pmayorista" value="">
+         </div>
+        <div class="form-group col-md-10 col-md-offset-1">
+          <label class="col-sm-2 control-label">Precio Minorista</label>
+          <input class="" type="number" name="precio_min" id="Pminorista" value="">
+        </div>
+
+          <div class="form-group col-md-5 col-md-offset-1">
+            <input class="btn-editaprod btn btn-default editarProducto" type="submit" name="Enviar">
+          </div>
+      </form>
+    </div>
 </article>
 <?php }
 }

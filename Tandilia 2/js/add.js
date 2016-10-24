@@ -98,13 +98,12 @@ $(document).on('click','.btn-borrarcat',function() {
   });
 });
 
-$(document).on('click','.editarProducto', function(){
-  event.preventDefault();
-  alert($(this).attr("prod_id"));
-  $.get( "index.php?action=editar_producto",{ id_producto: $(this).attr("data-idedit") }, function(data) {
-  $('.page').html(data);
- });
-});
+//$(document).on('click','.editarProducto', function(){
+//  event.preventDefault();
+//  $.get( "index.php?action=editar_producto",{ id_producto: $(this).attr("value") }, function(data) {
+//  $('.page').html(data);
+// });
+//});
 
 
 $(document).on('click','.eliminarCategoria', function(){
