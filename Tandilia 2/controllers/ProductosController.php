@@ -85,6 +85,16 @@ class ProductosController
       $this->cargarabm();
     }
 
+    function editarCategoria(){
+      if(!empty($_POST['nombre'])) {
+
+        $id_categoria = $_POST['id_categoria'];
+        $nombre = $_POST['nombre'];
+        $this->modelo->editarCategoria($id_categoria,$nombre);
+        }
+      $this->cargarabm();
+    }
+
     function eliminarCategoria() {
       $id_categoria = $_GET['id_categoria'];
       $this->modelo->eliminarCategoria($id_categoria);

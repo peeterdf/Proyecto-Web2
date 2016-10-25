@@ -55,6 +55,9 @@ $(document).on('click','.btn-borrarcat',function() {
   $('.borrarcat').toggle();
 });
 
+$(document).on('click','.btn-editacat',function() {
+  $('.editacat').toggle();
+});
 //$(document).on('click','.btn-enviarprod',function () {
   // event.preventDefault();
   // $.post( "index.php?action=guardar_producto",$("#formProductos").serialize(), function(data) {

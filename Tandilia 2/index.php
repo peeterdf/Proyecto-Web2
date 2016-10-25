@@ -41,6 +41,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_EDITAR_PRODUCTO:
     $controller->editarProducto();
       break;
+  case ConfigApp::$ACTION_EDITAR_CATEGORIA:
+    $controller->editarCategoria();
+      break;
   default:
     $controller->iniciar();
     break;

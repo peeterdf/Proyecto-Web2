@@ -113,4 +113,27 @@
           </div>
       </form>
     </div>
+
+    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-editacat btn btn-default">Editar Categoria</button>
+
+    <div class="ocultarabm editacat col-md-12">
+      <form class="form-horizontal  formularioabm"  id="formProductos" href="index.php?action=editar_categoria" method="post" enctype="multipart/form-data">
+        <select class="col-md-5 col-md-offset-1"  name="id_categoria">
+          {foreach from=$categorias item=categoria}
+          <option  value="{$categoria['id_categoria']}">{$categoria["nombre"]}</option>
+          {/foreach}
+        </select>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Nombre</label>
+          <input class="" type="text" name="nombre" required value="">
+        </div>
+
+
+          <div class="form-group col-md-5 col-md-offset-1">
+            <input class="btn-editaprod btn btn-default editarProducto" type="submit" name="Enviar">
+          </div>
+      </form>
+    </div>
+
+
 </article>

@@ -14,6 +14,11 @@
     <p>
       {$producto['descripcion']}
     </p>
+    <p>
+      {foreach from=$producto['imagenes'] key=index item=imagen}
+      <img src="{$imagen['path']}" alt="ProductoImagen_{$producto['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail imgproducto">
+      {/foreach}
+    </p>
     </div>
   </li>
   {/foreach}

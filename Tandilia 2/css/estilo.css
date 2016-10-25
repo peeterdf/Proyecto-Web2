@@ -22,12 +22,17 @@ body {
 }
 
 
-.formulario {
+.formulario{
   margin: 10px;
 }
 
 .control-label {
   color: white;
+}
+
+.imgproducto{
+  width: 100px;
+  height: 100px;
 }
 
 /*Contenido de la pagina*/

@@ -13,10 +13,17 @@ class ProductosModel
     $sentencia = $this->db->prepare("SELECT producto.*, categoria.nombre AS nombre_categoria FROM producto INNER JOIN categoria ON producto.fk_id_categoria = categoria.id_categoria");
     $sentencia->execute();
     $productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    //foreach ($productos as $key => $producto) {
-    //  $productos[$key]['imagenes']=$this->getImagenes($producto['id_producto']);
-    //}
+    foreach ($productos as $key => $producto) {
+      $productos[$key]['imagenes']=$this->getImagenes($producto['id_producto']);
+    }
+
     return $productos;
+  }
+
+  function getImagenes($id_producto){
+    $sentencia = $this->db->prepare( "select * from imagen where fk_id_producto=?");
+    $sentencia->execute(array($id_producto));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function getCategorias() {
@@ -39,6 +46,11 @@ class ProductosModel
   function editarProducto($id_producto,$precio_may,$precio_min) {
     $sentencia = $this->db->prepare("UPDATE producto SET precio_min='$precio_min', precio_may='$precio_may'WHERE id_producto=?");
     $sentencia->execute(array($id_producto));
+  }
+
+  function editarCategoria($id_categoria,$nombre) {
+    $sentencia = $this->db->prepare("UPDATE categoria SET nombre='$nombre'WHERE id_categoria=?");
+    $sentencia->execute(array($id_categoria));
   }
 
   function addProducto($producto, $imagenes) {

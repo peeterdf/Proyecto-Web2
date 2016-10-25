@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-24 06:51:23
+/* Smarty version 3.1.30, created on 2016-10-25 02:46:47
   from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580d934b9bb0c7_19496219',
+  'unifunc' => 'content_580eab77c70a18_74622867',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd5524481497eb0829d56f6f55e90db02cef329bd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\abm.tpl',
-      1 => 1477284677,
+      1 => 1477356401,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:abmtabla.tpl' => 1,
   ),
 ),false)) {
-function content_580d934b9bb0c7_19496219 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580eab77c70a18_74622867 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <article>
 
@@ -175,6 +175,40 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           </div>
       </form>
     </div>
+
+    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-editacat btn btn-default">Editar Categoria</button>
+
+    <div class="ocultarabm editacat col-md-12">
+      <form class="form-horizontal  formularioabm"  id="formProductos" href="index.php?action=editar_categoria" method="post" enctype="multipart/form-data">
+        <select class="col-md-5 col-md-offset-1"  name="id_categoria">
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
+?>
+          <option  value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['categoria']->value["nombre"];?>
+</option>
+          <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+        </select>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Nombre</label>
+          <input class="" type="text" name="nombre" required value="">
+        </div>
+
+
+          <div class="form-group col-md-5 col-md-offset-1">
+            <input class="btn-editaprod btn btn-default editarProducto" type="submit" name="Enviar">
+          </div>
+      </form>
+    </div>
+
+
 </article>
 <?php }
 }
