@@ -74,7 +74,9 @@ class ProductosController
         $id_producto = $_POST['id_producto'];
         $precio_min = $_POST['precio_min'];
         $precio_may = $_POST['precio_may'];
-        $this->modelo->editarProducto($id_producto,$precio_may,$precio_min);
+        $descripcion=$_POST['descripcion'];
+        $categoria=$_POST['fk_id_categoria'];
+        $this->modelo->editarProducto($id_producto,$precio_may,$precio_min,$descripcion,$categoria);
         }
       $this->cargarabm();
     }

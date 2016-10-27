@@ -43,8 +43,8 @@ class ProductosModel
     $sentencia->execute(array($id_producto));
   }
 
-  function editarProducto($id_producto,$precio_may,$precio_min) {
-    $sentencia = $this->db->prepare("UPDATE producto SET precio_min='$precio_min', precio_may='$precio_may'WHERE id_producto=?");
+  function editarProducto($id_producto,$precio_may,$precio_min,$descripcion,$categoria) {
+    $sentencia = $this->db->prepare("UPDATE producto SET precio_min='$precio_min', precio_may='$precio_may', descripcion='$descripcion', fk_id_categoria='$categoria' WHERE id_producto=?");
     $sentencia->execute(array($id_producto));
   }
 
