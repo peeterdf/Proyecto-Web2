@@ -1,7 +1,7 @@
 <?php
 class ProductosModel
 {
-  private $productos;
+
   private $db;
 
   function __construct()
@@ -26,17 +26,8 @@ class ProductosModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function getCategorias() {
-    $sentencia = $this->db->prepare("SELECT * FROM categoria");
-    $sentencia->execute();
-    $categorias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    return $categorias;
-  }
 
-  function addCategoria($categoria) {
-    $sentencia = $this->db->prepare("INSERT INTO categoria(nombre) VALUES(?) ");
-    $sentencia->execute(array($categoria["nombre"]));
-  }
+
 
   function eliminarProducto($id_producto) {
     $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_producto=? ");
@@ -48,10 +39,6 @@ class ProductosModel
     $sentencia->execute(array($id_producto));
   }
 
-  function editarCategoria($id_categoria,$nombre) {
-    $sentencia = $this->db->prepare("UPDATE categoria SET nombre='$nombre'WHERE id_categoria=?");
-    $sentencia->execute(array($id_categoria));
-  }
 
   function addProducto($producto, $imagenes) {
     $sentencia = $this->db->prepare("INSERT INTO producto(fk_id_categoria, nombre, descripcion, precio_may, precio_min) VALUES(?,?,?,?,?)");
@@ -67,9 +54,5 @@ class ProductosModel
     }
   }
 
-  function eliminarCategoria($id_categoria) {
-    $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id_categoria=? ");
-    $sentencia->execute(array($id_categoria));
-  }
 }
  ?>

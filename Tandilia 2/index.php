@@ -1,13 +1,17 @@
 <?php
 require('controllers/ProductosController.php');
+require('controllers/CategoriasController.php');
+require('controllers/TandiliaController.php');
 require ('config/ConfigApp.php');
 
-$controller = new ProductosController();
+$productoscontroller = new ProductosController();
+$categoriascontroller = new CategoriasController();
+$tandiliacontroller = new TandiliaController();
 
 
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $controller->iniciar();
+  $tandiliacontroller->iniciar();
   die();
 }
 
@@ -15,37 +19,37 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR:
-    $controller->iniciar();
+    $tandiliacontroller->iniciar();
     break;
   case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
-    $controller->guardar();
+    $productoscontroller->guardar();
     break;
   case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
-    $controller->eliminar();
+    $productoscontroller->eliminar();
     break;
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
-    $controller->mostrarproductos();
+    $productoscontroller->mostrarproductos();
     break;
   case ConfigApp::$ACTION_CARGAR_ABM:
-    $controller->cargarabm();
+    $tandiliacontroller->cargarabm();
     break;
   case ConfigApp::$ACTION_CARGAR_TABLA_VENTAS:
-    $controller->muestraTablaVentas();
+    $tandiliacontroller->muestraTablaVentas();
     break;
   case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
-    $controller->guardarCategoria();
+    $categoriascontroller->guardarCategoria();
       break;
   case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
-    $controller->eliminarCategoria();
+    $categoriascontroller->eliminarCategoria();
       break;
   case ConfigApp::$ACTION_EDITAR_PRODUCTO:
-    $controller->editarProducto();
+    $productoscontroller->editarProducto();
       break;
   case ConfigApp::$ACTION_EDITAR_CATEGORIA:
-    $controller->editarCategoria();
+    $categoriascontroller->editarCategoria();
       break;
   default:
-    $controller->iniciar();
+    $tandiliacontroller->iniciar();
     break;
 }
 

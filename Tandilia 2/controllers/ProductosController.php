@@ -1,23 +1,22 @@
 <?php
-require('views/ProductosView.php');
-require('models/ProductosModel.php');
+require_once('views/ProductosView.php');
+require_once('models/ProductosModel.php');
+require_once('models/CategoriasModel.php');
 
 class ProductosController
 {
   private $vista;
-  private $modelo;
+  private $pmodelo;
+  private $cmodelo;
 
   function __construct(){
-    $this->modelo = new ProductosModel();
+    $this->pmodelo = new ProductosModel();
+    $this->cmodelo = new CategoriasModel();
     $this->vista = new ProductosView();
   }
 
-  function iniciar(){
-    $this->vista->mostrar();
-  }
-
   function mostrarproductos(){
-    $productos = $this->modelo->getProductos();
+    $productos = $this->pmodelo->getProductos();
     $this->vista->mostrarproductos($productos);
   }
 
@@ -40,7 +39,7 @@ class ProductosController
       if(isset($_FILES['imagenes'])){
         $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
       if(count($imagenesVerificadas)>0){
-        $this->modelo->addProducto($producto,$imagenesVerificadas);
+        $this->pmodelo->addProducto($producto,$imagenesVerificadas);
       }else{
         $this->vista->mostrarMensaje("Error con las imagenes", "danger");
       }
@@ -50,23 +49,12 @@ class ProductosController
   $this->cargarabm();
   }
 
-  function cargartabla(){
-    $productos = $this->modelo->getProductos();
-    $categorias = $this->modelo->getCategorias();
-    $this->vista->getTabla($productos, $categorias);
-  }
-
-
     function cargarabm(){
-      $productos = $this->modelo->getProductos();
-      $categorias = $this->modelo->getCategorias();
+      $productos = $this->pmodelo->getProductos();
+      $categorias = $this->cmodelo->getCategorias();
       $this->vista->mostrarabm($productos, $categorias);
     }
 
-    function muestraTablaVentas(){
-      $productos = $this->modelo->getProductos();
-      $this->vista->mostrarTablaVentas($productos);
-    }
 
     function editarProducto(){
       if(!empty($_POST['precio_min']) && !empty($_POST['precio_may'])) {
@@ -76,35 +64,14 @@ class ProductosController
         $precio_may = $_POST['precio_may'];
         $descripcion=$_POST['descripcion'];
         $categoria=$_POST['fk_id_categoria'];
-        $this->modelo->editarProducto($id_producto,$precio_may,$precio_min,$descripcion,$categoria);
+        $this->pmodelo->editarProducto($id_producto,$precio_may,$precio_min,$descripcion,$categoria);
         }
       $this->cargarabm();
-    }
-
-    function guardarCategoria() {
-      $categoria = $_POST;
-      $this->modelo->addCategoria($categoria);
-      $this->cargarabm();
-    }
-
-    function editarCategoria(){
-      if(!empty($_POST['nombre'])) {
-
-        $id_categoria = $_POST['id_categoria'];
-        $nombre = $_POST['nombre'];
-        $this->modelo->editarCategoria($id_categoria,$nombre);
-        }
-      $this->cargarabm();
-    }
-
-    function eliminarCategoria() {
-      $id_categoria = $_GET['id_categoria'];
-      $this->modelo->eliminarCategoria($id_categoria);
     }
 
     function eliminar(){
     $id_producto = $_GET['id_producto'];
-    $this->modelo->eliminarProducto($id_producto);
+    $this->pmodelo->eliminarProducto($id_producto);
     $this->cargarabm();
   }
 

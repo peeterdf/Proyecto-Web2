@@ -1,5 +1,6 @@
 <?php
-require('libs/Smarty.class.php');
+//require('libs/Smarty.class.php');
+require_once('libs/Smarty.class.php');
 
 class ProductosView
 {
@@ -10,40 +11,32 @@ class ProductosView
     $this->smarty = new Smarty();
   }
 
-  function mostrar(){
-    $this->smarty->display('index.tpl');
-  }
+  //function mostrar(){
+//    $this->smarty->display('index.tpl');
+  //}//tandilia
 
   function mostrarproductos($productos) {
     $this->smarty->assign('productos',$productos);
     $this->smarty->display('productos.tpl');
-  }
+  }//producto
 
-  function mostrarTablaVentas($productos) {
-    $this->smarty->assign('productos',$productos);
-    $this->smarty->display('venta.tpl');
-  }
+//  function mostrarTablaVentas($productos) {
+  //  $this->smarty->assign('productos',$productos);
+//    $this->smarty->display('venta.tpl');
+//  }//tandilia
 
-  function mostrarproductoslista($productos)  {
-    $this->smarty->assign('productos',$productos);
-    $this->smarty->display('productoslista.tpl');
-  }
+
 
   function mostrarabm($productos, $categorias){
     $this->smarty->assign('productos',$productos);
     $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('abm.tpl');
-  }
+  }//todos
 
-  function getTabla($productos, $categorias){
-    $this->smarty->assign('productos',$productos);
-    $this->smarty->assign('categorias',$categorias);
-    $this->smarty->display('abmtabla.tpl');
-  }
 
   function mostrarMensaje($mensaje, $tipo){
     $this->smarty->assign('mensaje',$mensaje);
     $this->smarty->assign('tipoMensaje',$tipo);
-  }
+  }//producto
 }
  ?>
