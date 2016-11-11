@@ -2,6 +2,7 @@
 ##Pautas para la Segunda Entrega
 Para la segunda entrega, se debe continuar el trabajo de la primera etapa. El objetivo es agregar nueva funcionalidad detallada en forma de historias abajo.
 
+~~tareas realizadas~~
 
 1. Como usuario, quiero poder filtrar los ítems según una categoría que indique.
 2. Como usuario, quiero ver múltiples imágenes en cada ítem.
