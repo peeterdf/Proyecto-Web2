@@ -9,6 +9,16 @@ class ProductosModel
     $this->db = new PDO('mysql:host=localhost;dbname=cerveceriatandilia;charset=utf8', 'root', '');
   }
 
+  function getProductosIdCat($id_categoria) {
+    $sentencia = $this->db->prepare("SELECT producto.*, categoria.nombre AS nombre_categoria FROM producto INNER JOIN categoria ON producto.fk_id_categoria = categoria.id_categoria  WHERE id_categoria=?");
+    $sentencia->execute(array($id_categoria));
+    $productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($productos as $key => $producto) {
+      $productos[$key]['imagenes']=$this->getImagenes($producto['id_producto']);
+    }
+    return $productos;
+  }
+
   function getProductos() {
     $sentencia = $this->db->prepare("SELECT producto.*, categoria.nombre AS nombre_categoria FROM producto INNER JOIN categoria ON producto.fk_id_categoria = categoria.id_categoria");
     $sentencia->execute();
@@ -21,13 +31,10 @@ class ProductosModel
   }
 
   function getImagenes($id_producto){
-    $sentencia = $this->db->prepare( "select * from imagen where fk_id_producto=?");
+    $sentencia = $this->db->prepare( "SELECT * FROM imagen WHERE fk_id_producto=?");
     $sentencia->execute(array($id_producto));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-
-
-
 
   function eliminarProducto($id_producto) {
     $sentencia = $this->db->prepare("DELETE FROM producto WHERE id_producto=? ");
