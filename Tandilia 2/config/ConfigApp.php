@@ -12,6 +12,7 @@ class ConfigApp{
   public static $ACTION_GUARDAR_CATEGORIA = 'guardar_categoria';
   public static $ACTION_ELIMINAR_CATEGORIA = 'eliminar_categoria';
   public static $ACTION_EDITAR_CATEGORIA = 'editar_categoria';
+  public static $ACTION_FILTRA_CATEGORIA = 'filtra_categoria';
 }
 
  ?>

@@ -9,20 +9,24 @@ class CategoriasController
   private $pmodelo;
   private $cmodelo;
 
-  function __construct(){
+  function __construct() {
     $this->pmodelo = new ProductosModel();
     $this->cmodelo = new CategoriasModel();
     $this->vista = new CategoriasView();
   }
 
-
-
-    function cargarabm(){
+    function cargarabm() {
       $productos = $this->pmodelo->getProductos();
       $categorias = $this->cmodelo->getCategorias();
       $this->vista->mostrarabm($productos, $categorias);
     }
 
+    function filtraCategoria() {
+      $id_categoria = $_POST['id_categoria'];
+      $productos = $this->pmodelo->getProductosIdCat($id_categoria);
+      $categorias = $this->cmodelo->getCategorias();
+      $this->vista->mostrarCatId($productos,$categorias);
+    }
 
     function guardarCategoria() {
       $categoria = $_POST;
@@ -30,7 +34,7 @@ class CategoriasController
       $this->cargarabm();
     }
 
-    function editarCategoria(){
+    function editarCategoria() {
       if(!empty($_POST['nombre'])) {
 
         $id_categoria = $_POST['id_categoria'];
@@ -45,7 +49,5 @@ class CategoriasController
       $this->cmodelo->eliminarCategoria($id_categoria);
       $this->cargarabm();
     }
-
-
 }
  ?>

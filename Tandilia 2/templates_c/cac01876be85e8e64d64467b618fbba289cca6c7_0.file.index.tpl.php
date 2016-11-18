@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-22 23:00:45
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\index.tpl" */
+/* Smarty version 3.1.30, created on 2016-11-14 19:11:49
+  from "C:\xampp\htdocs\Tandilia 2\templates\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580bd37d8c2fe3_20074574',
+  'unifunc' => 'content_5829fe65e24c41_70006913',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '61ed8566721cde6b97c8d876f7ea0cb7b6ad6064' => 
+    'cac01876be85e8e64d64467b618fbba289cca6c7' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\index.tpl',
-      1 => 1477013405,
+      0 => 'C:\\xampp\\htdocs\\Tandilia 2\\templates\\index.tpl',
+      1 => 1477935346,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_580bd37d8c2fe3_20074574 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5829fe65e24c41_70006913 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'foo'), 0, false);
 ?>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-27 04:05:24
-  from "C:\xampp\htdocs\proyectos\Proyecto-Web2\Tandilia 2\templates\abmtabla.tpl" */
+/* Smarty version 3.1.30, created on 2016-11-14 19:11:51
+  from "C:\xampp\htdocs\Tandilia 2\templates\abmtabla.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_581160e4d4a3d2_81545721',
+  'unifunc' => 'content_5829fe67dffbb2_59190845',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '344c6ecee493cd76a0b2836e17a3e02fbd0d0615' => 
+    '921a8f755384bbe587e5828f0471e1c96cdb7c0d' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto-Web2\\Tandilia 2\\templates\\abmtabla.tpl',
-      1 => 1477533602,
+      0 => 'C:\\xampp\\htdocs\\Tandilia 2\\templates\\abmtabla.tpl',
+      1 => 1477935346,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_581160e4d4a3d2_81545721 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5829fe67dffbb2_59190845 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <table class="table table-bordered">
   <thead>

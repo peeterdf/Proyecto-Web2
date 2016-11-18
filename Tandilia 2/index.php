@@ -15,8 +15,6 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   die();
 }
 
-
-
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR:
     $tandiliacontroller->iniciar();
@@ -47,6 +45,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
       break;
   case ConfigApp::$ACTION_EDITAR_CATEGORIA:
     $categoriascontroller->editarCategoria();
+      break;
+  case ConfigApp::$ACTION_FILTRA_CATEGORIA:
+    $categoriascontroller->filtraCategoria();
       break;
   default:
     $tandiliacontroller->iniciar();

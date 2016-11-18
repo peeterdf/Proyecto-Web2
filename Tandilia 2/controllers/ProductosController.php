@@ -17,7 +17,8 @@ class ProductosController
 
   function mostrarproductos(){
     $productos = $this->pmodelo->getProductos();
-    $this->vista->mostrarproductos($productos);
+    $categorias = $this->cmodelo->getCategorias();
+    $this->vista->mostrarproductos($productos, $categorias);
   }
 
   function getImagenesVerificadas($imagenes){

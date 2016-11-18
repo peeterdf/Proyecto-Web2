@@ -7,6 +7,16 @@ body {
   background-attachment: fixed;
 }
 
+.margen {
+  margin: 20px;
+}
+
+.cat_prod {
+  color:black;
+  margin: 10px;
+  float: right;
+}
+
 .plus{
   color: transparent;
 }
