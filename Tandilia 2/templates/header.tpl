@@ -49,6 +49,13 @@
                   <li class="productos"><a href="#">Productos</a></li>
                   <li class="abm"><a href="#">ABM</a></li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="login"><a href="#">Login</a></li>
+                  <li class="logout"><a href="#">Out</a></li>
+                </ul>
+
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
