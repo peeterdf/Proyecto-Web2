@@ -1,12 +1,10 @@
 <?php
-class CategoriasModel
-{
+include_once ("models/Model.php");
 
-  private $db;
+class CategoriasModel extends Model{
 
-  function __construct()
-  {
-    $this->db = new PDO('mysql:host=localhost;dbname=cerveceriatandilia;charset=utf8', 'root', '');
+  function __construct() {
+    parent::__construct();
   }
 
   function getCategorias() {

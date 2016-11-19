@@ -1,14 +1,11 @@
 <?php
-class ProductosModel
-{
+include_once ("models/Model.php");
 
-  private $db;
+class ProductosModel extends Model{
 
-  function __construct()
-  {
-    $this->db = new PDO('mysql:host=localhost;dbname=cerveceriatandilia;charset=utf8', 'root', '');
+  function __construct() {
+    parent::__construct();
   }
-
   function getProductosIdCat($id_categoria) {
     $sentencia = $this->db->prepare("SELECT producto.*, categoria.nombre AS nombre_categoria FROM producto INNER JOIN categoria ON producto.fk_id_categoria = categoria.id_categoria  WHERE id_categoria=?");
     $sentencia->execute(array($id_categoria));
