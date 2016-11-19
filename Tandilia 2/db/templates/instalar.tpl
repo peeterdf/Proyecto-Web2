@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instalación de la base de datos</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body class="blank  pace-done">
-<div class="wrapper">
-    <section class="content">
+<body >
+<div >
+    <section>
         <div class="container-center lg animated slideInDown">
             <div class="view-header">
                 <div class="header-title">
@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <div class="panel panel-filled">
-                <div class="panel-body">
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                <div class="panel-body ">
                     <form class="database" method="post">
                         <div class="row">
                             <div class="form-group col-lg-6">

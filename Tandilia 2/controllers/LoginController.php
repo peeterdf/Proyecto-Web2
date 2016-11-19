@@ -14,34 +14,32 @@ class LoginController
     $this->vista = new LoginView();
   }
 
-  public function validar(){
-
-  }
-
   public function login(){
-    if(!isset($_REQUEST['txtUser'])){
-      $this->vista->mostrar([]);
-    }
-    else {
-      $user = $_REQUEST['txtUser'];
-      $pass = $_REQUEST['txtPass'];
-      $hash = $this->modelo->getUser($user)["password"];
-      //TODO: falta controlar el caso de que el usuario no exista
-      if(password_verify($pass, $hash))
-      {
-        session_start();
-        $_SESSION['USER'] = $user;
-        header("Location: iniciar");
+
+    if(isset($_POST["usuario"]) && isset($_POST["pass"])){
+      $user = $_POST["usuario"];
+      $pass = $_POST["pass"];
+      $userReg = $this->modelo->getUser($user);
+      $passReg = $userReg["pass"];
+
+
+      $hash = password_hash("qwerty", PASSWORD_DEFAULT);
+      print_r($hash);
+//  if(password_verify($pass, $passReg)){
+      if($pass == $passReg){
+        echo "string2";
+        $_SESSION["id"] = $userReg["id_usuario"];
+        $_SESSION["usuario"] = $userReg["nombre"];
+        $_SESSION["email"] = $userReg["email"];
+        header("Location: index.php");
         die();
       }
-      else
-      {
-            $this->vista->mostrar(["BAD"]);
-
+      else {
+        $this->vista->agregarError('El usuario o la contraseña son incorrectos'); }
       }
-
+      $this->vista->mostrar([]);
     }
-  }
+
 
   public function checkLogin(){
     session_start();

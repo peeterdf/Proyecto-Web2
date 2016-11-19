@@ -74,7 +74,7 @@ CREATE TABLE `producto` (
 INSERT INTO `producto` (`fk_id_categoria`, `id_producto`, `nombre`, `descripcion`, `precio_may`, `precio_min`) VALUES
 (6, 34, 'Rubia Pilsen', 'Elaborada con maltas tipo pilsen, levaduras Lager y un cuidadoso filtrado, da como resultado una cerveza brillante, con aroma a lúpulo y sabor frutado. Graduación: 5°.', 60, 70),
 (6, 36, 'WeissBier (Rubia de trigo)', 'Esta variedad, combina maltas pilsen con trigos malteados. A diferencia de otras, nuestra cerveza de trigo es finamente filtrada para lograr un color pálido, espuma blanca y un sabor fuerte.', 60, 70),
-(6, 39, 'HoneyBeer (Rubia con miel)', '"Luna de Miel..." Este estilo tiene más de 4000 años, cuando en Babilonia, el padre de la novia le daba al novio esta variedad de cerveza. Color ámbar, sabor dulce con trazas a miel.', 60, 70),
+(6, 39, 'HoneyBeer (Rubia con miel)', 'Luna de Miel... Este estilo tiene más de 4000 años, cuando en Babilonia, el padre de la novia le daba al novio esta variedad de cerveza. Color ámbar, sabor dulce con trazas a miel.', 60, 70),
 (4, 40, 'Roja', 'Esta variedad la logramos combinando un blend de maltas (pilsen, tostadas y caramelo) las proporciones exactas nos brindan ese color rubí, caracteristico de esta variedad, con sabor acaramelado.', 60, 70),
 (5, 41, 'Negra Bock', 'Elaborada con maltas pilsen y tostadas. Gran cuerpo y sabor acaramelado. Graduación alcoholica 5,4°. Presentación en botellas de: 355cc y 660cc.', 60, 70),
 (5, 42, 'Negra Doppelbock', 'La más exquisita variedad de cerveza negra, doble maltas tostadas, maceracion y fermentación controlada da como resultado esta cerveza de intenso sabor, cuerpo cremoso y una graduación de 8°.', 60, 70),
