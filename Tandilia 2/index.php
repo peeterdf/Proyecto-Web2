@@ -2,12 +2,13 @@
 require('controllers/ProductosController.php');
 require('controllers/CategoriasController.php');
 require('controllers/TandiliaController.php');
+require('controllers/LoginController.php');
 require ('config/ConfigApp.php');
 
 $productoscontroller = new ProductosController();
 $categoriascontroller = new CategoriasController();
 $tandiliacontroller = new TandiliaController();
-
+$logincontroller = new LoginController();
 
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
@@ -19,6 +20,12 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR:
     $tandiliacontroller->iniciar();
     break;
+  case ConfigApp::$ACTION_LOGIN:
+    $logincontroller->login();
+    break;
+    case ConfigApp::$ACTION_LOGOUT:
+      $logincontroller->logout();
+      break;
   case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
     $productoscontroller->guardar();
     break;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-14 19:11:49
+/* Smarty version 3.1.30, created on 2016-11-18 22:51:03
   from "C:\xampp\htdocs\Tandilia 2\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5829fe65e412d0_48204170',
+  'unifunc' => 'content_582f77c737fcd4_00368501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e4b5ea87fb94ec63aeaa62f8ca5f894a3dff4503' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tandilia 2\\templates\\header.tpl',
-      1 => 1477935346,
+      1 => 1479505855,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5829fe65e412d0_48204170 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582f77c737fcd4_00368501 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +77,13 @@ function content_5829fe65e412d0_48204170 (Smarty_Internal_Template $_smarty_tpl)
                   <li class="productos"><a href="#">Productos</a></li>
                   <li class="abm"><a href="#">ABM</a></li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="login"><a href="#">Login</a></li>
+                  <li class="logout"><a href="#">Out</a></li>
+                </ul>
+
+
             </div>
             <!-- /.navbar-collapse -->
         </div>

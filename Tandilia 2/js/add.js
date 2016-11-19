@@ -14,6 +14,18 @@ $(document).ready(function() {
     $('.page').load('templates/contacto.tpl');
   });
 
+  $(".login").click(function() {
+    $.get( "index.php?action=login", function(data) {
+        $('.page').html(data);
+        });
+  });
+
+  $(".logout").click(function() {
+    $.get( "index.php?action=logout", function(data) {
+        $('.page').html(data);
+        });
+  });
+
   $(".abm").click(function() {
     $.get( "index.php?action=cargar_abm", function(data) {
         $('.page').html(data);
