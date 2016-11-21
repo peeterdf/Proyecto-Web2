@@ -15,6 +15,7 @@ class ConfigApp{
   public static $ACTION_FILTRA_CATEGORIA = 'filtra_categoria';
 
   public static $ACTION_LOGIN= 'login';
+  public static $ACTION_REGISTRAR = 'registrar_usuario';
   public static $ACTION_LOGOUT= 'logout';
 
 }

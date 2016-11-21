@@ -23,9 +23,12 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_LOGIN:
     $logincontroller->login();
     break;
-    case ConfigApp::$ACTION_LOGOUT:
-      $logincontroller->logout();
-      break;
+  case ConfigApp::$ACTION_REGISTRAR:
+    $logincontroller->registrar_usuario();
+    break;
+  case ConfigApp::$ACTION_LOGOUT:
+    $logincontroller->logout();
+    break;
   case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
     $productoscontroller->guardar();
     break;

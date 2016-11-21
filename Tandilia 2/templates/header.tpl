@@ -51,8 +51,9 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="login"><a href="#">Login</a></li>
-                  <li class="logout"><a href="#">Out</a></li>
+                  <li class="login"><a href="#">Sesión</a></li>
+                  <li class="register"><a href="#">Registro</a></li>
+                  <li class="logout"><a href="#">Salir</a></li>
                 </ul>
 
 

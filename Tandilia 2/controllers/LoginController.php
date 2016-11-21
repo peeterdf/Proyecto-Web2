@@ -16,20 +16,15 @@ class LoginController
 
   public function login(){
 
-    if(isset($_POST["usuario"]) && isset($_POST["pass"])){
-      $user = $_POST["usuario"];
+    if(isset($_POST["user"]) && isset($_POST["pass"])){
+      $user = $_POST["user"];
       $pass = $_POST["pass"];
       $userReg = $this->modelo->getUser($user);
       $passReg = $userReg["pass"];
 
-
-      $hash = password_hash("qwerty", PASSWORD_DEFAULT);
-      print_r($hash);
-//  if(password_verify($pass, $passReg)){
-      if($pass == $passReg){
-        echo "string2";
+      if(password_verify($pass, $passReg)){
         $_SESSION["id"] = $userReg["id_usuario"];
-        $_SESSION["usuario"] = $userReg["nombre"];
+        $_SESSION["user"] = $userReg["nombre"];
         $_SESSION["email"] = $userReg["email"];
         header("Location: index.php");
         die();
@@ -37,24 +32,27 @@ class LoginController
       else {
         $this->vista->agregarError('El usuario o la contraseña son incorrectos'); }
       }
-      $this->vista->mostrar([]);
+      $this->vista->mostrar();
+  }
+
+    function registrar_usuario() {
+      $newUsuario = [];
+      if( (isset($_POST['user'])) && (isset($_POST['pass'])) && (isset($_POST['email']))){
+          $newUsuario["user"] = $_POST['user'];
+          $newUsuario["email"] = $_POST['email'];
+          $newUsuario["pass"] = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+          $this->modelo->altaUsuario($newUsuario);
+          $this->login();
+        }
+      $this->vista->mostrarRegistro();
     }
 
 
-  public function checkLogin(){
-    session_start();
-    if(!isset($_SESSION['USER'])){
+    public function logout(){
+      session_destroy();
       header("Location: index.php");
       die();
-    };
-  }
-
-  public function logout(){
-    session_start();
-    session_destroy();
-    header("Location: index.php?action=login");
-    die();
-  }
+    }
 
 }
 

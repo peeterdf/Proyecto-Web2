@@ -8,9 +8,9 @@ $smarty = new Smarty();
 if(isset($_POST["host"]) && isset($_POST["user"]) && isset($_POST["db-pw"]) && isset($_POST["dbname"])){
 
   try {
-      $conexionValida = new PDO('mysql:host='.$_POST["host"].';charset=utf8', $_POST["user"], $_POST["db-pw"]);
+      $conexionValida = new PDO('mysql:host=localhost;charset=utf8', $_POST["user"], $_POST["db-pw"]);
   } catch (PDOException $e) {
-      $conexionValida = false;
+    $conexionValida = false;
   }
 
   if($conexionValida){
@@ -26,7 +26,9 @@ if(isset($_POST["host"]) && isset($_POST["user"]) && isset($_POST["db-pw"]) && i
     $querys = getSQL(SQLFILE);
     $dbname = $_POST["dbname"];
 
-    if(isset($_POST['vaciar'])) $conexionValida->exec('DROP DATABASE IF EXISTS '.$dbname);
+    if(isset($_POST['vaciar']))
+        $conexionValida->exec('DROP DATABASE IF EXISTS '.$dbname);
+
     $conexionValida->exec('CREATE DATABASE IF NOT EXISTS '.$dbname);
     $conexionValida->exec('USE '.$dbname);
 
@@ -71,5 +73,4 @@ function changeValue($variable, $value){
   $newVar = $start.$value.$end.PHP_EOL;
   return $newVar;
 }
-
  ?>

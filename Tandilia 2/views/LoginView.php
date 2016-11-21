@@ -14,7 +14,11 @@ class LoginView
     $this->smarty->assign('error',$error);
   }
 
-  function mostrar($error){
+  function mostrarRegistro(){
+    $this->smarty->display('registro.tpl');
+  }
+
+  function mostrar(){
     $this->smarty->display('login.tpl');
   }
 

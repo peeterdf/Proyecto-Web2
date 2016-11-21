@@ -26,6 +26,12 @@ $(document).ready(function() {
         });
   });
 
+  $(".register").click(function() {
+    $.get( "index.php?action=registrar_usuario", function(data) {
+        $('.page').html(data);
+        });
+  });
+
   $(".abm").click(function() {
     $.get( "index.php?action=cargar_abm", function(data) {
         $('.page').html(data);
