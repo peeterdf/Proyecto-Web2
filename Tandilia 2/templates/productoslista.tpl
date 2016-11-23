@@ -14,6 +14,7 @@
     <p>
       {$producto['descripcion']}
     </p>
+    <button type="button" class="btn btn-rounded btn-default btn-xs ampliarproducto" data-idproducto={$producto['id_producto']}>Ver más</button>
     <p>
       {foreach from=$producto['imagenes'] key=index item=imagen}
       <img src="{$imagen['path']}" alt="ProductoImagen_{$producto['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail imgproducto">

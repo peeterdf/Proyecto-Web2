@@ -32,6 +32,17 @@ $(document).ready(function() {
         });
   });
 
+  $(".ampliarproducto").click(function() {
+    $('.page').load('templates/producto.tpl');
+  });
+
+  $(document).on('click','.ampliarproducto', function(){
+    event.preventDefault();
+    $.get( "index.php?action=ampliar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
+    $('.page').html(data);
+   });
+ });
+
   $(".abm").click(function() {
     $.get( "index.php?action=cargar_abm", function(data) {
         $('.page').html(data);

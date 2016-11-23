@@ -21,6 +21,12 @@ class ProductosController
     $this->vista->mostrarproductos($productos, $categorias);
   }
 
+  function ampliarproducto(){
+    $id_producto = $_GET['id_producto'];
+    $producto = $this->pmodelo->getProducto($id_producto);
+    $this->vista->mostrarproducto($producto);
+  }
+
   function getImagenesVerificadas($imagenes){
     $imagenesVerificadas = [];
     for ($i=0; $i < count($imagenes['size']); $i++) {

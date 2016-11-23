@@ -12,13 +12,16 @@ $tandiliacontroller = new TandiliaController();
 $logincontroller = new LoginController();
 $contactocontroller = new ContactoController();
 
+
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
+
   $tandiliacontroller->iniciar();
   die();
 }
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR:
+
     $tandiliacontroller->iniciar();
     break;
   case ConfigApp::$ACTION_LOGIN:
@@ -38,6 +41,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     break;
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
     $productoscontroller->mostrarproductos();
+    break;
+  case ConfigApp::$ACTION_AMPLIAR_PRODUCTO:
+    $productoscontroller->ampliarproducto();
     break;
   case ConfigApp::$ACTION_CARGAR_ABM:
     $tandiliacontroller->cargarabm();

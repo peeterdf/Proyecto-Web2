@@ -27,6 +27,15 @@ class ProductosModel extends Model{
     return $productos;
   }
 
+  function getProducto($id_producto) {
+    $sentencia = $this->db->prepare("SELECT producto.*, categoria.nombre AS nombre_categoria FROM producto INNER JOIN categoria ON producto.fk_id_categoria = categoria.id_categoria WHERE id_producto=?");
+    $sentencia->execute(array($id_producto));
+    $producto = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $producto['imagenes']=$this->getImagenes($producto['id_producto']);
+
+    return $producto;
+  }
+
   function getImagenes($id_producto){
     $sentencia = $this->db->prepare( "SELECT * FROM imagen WHERE fk_id_producto=?");
     $sentencia->execute(array($id_producto));

@@ -36,22 +36,27 @@ class LoginController
         $this->vista->mostrarlogin();
         }
       }else
-      $this->vista->mostrarlogin();
+     $this->vista->mostrarlogin();
   }
 
     function registrar_usuario() {
       $newUsuario = [];
-      if( (isset($_POST['user'])) && (isset($_POST['pass'])) && (isset($_POST['email'])) && (isset($_POST['confirmpass']))){
-      if ($_POST['pass']==$_POST['confirmpass']){
-          $newUsuario["user"] = $_POST['user'];
-          $newUsuario["email"] = $_POST['email'];
-          $newUsuario["pass"] = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-          $this->modelo->altaUsuario($newUsuario);
-          $this->login();
-        }else  {
-          $this->vista->agregarError('Los datos ingresados son incorrectos');
-          $this->vista->mostrarRegistro();
-        }
+      if( (isset($_POST['newuser'])) && (isset($_POST['newpass'])) && (isset($_POST['newemail'])) && (isset($_POST['newconfirmpass']))){
+        $existe = $this->modelo->existeUsuario($_POST['newemail']);
+        if(!$existe){
+          if ($_POST['newpass']==$_POST['newconfirmpass']){
+              $newUsuario["user"] = $_POST['newuser'];
+              $newUsuario["email"] = $_POST['newemail'];
+              $newUsuario["pass"] = password_hash($_POST['newpass'], PASSWORD_DEFAULT);
+              $this->modelo->altaUsuario($newUsuario);
+              $this->login();
+            }else  {
+              $this->vista->agregarError('Los datos ingresados son incorrectos');
+              $this->vista->mostrarRegistro();
+            }
+         }
+         else  {  $this->vista->agregarError('El usuario ya se encuentra registrado');
+                $this->vista->mostrarRegistro();}
 
       }else  $this->vista->mostrarRegistro();
     }

@@ -11,6 +11,10 @@ body {
   margin: 20px;
 }
 
+.comentarios{
+  color: black;
+}
+
 .cat_prod {
   color:black;
   margin: 10px;

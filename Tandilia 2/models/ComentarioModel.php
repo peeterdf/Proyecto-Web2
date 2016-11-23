@@ -15,10 +15,10 @@ class ComentarioModel extends Model{
   }
 
   function getComentarios() {
-    $sentencia = $this->db->prepare("SELECT comentario.*, producto.nombre AS nombre_producto  FROM comentario INNER JOIN producto,usuario ON comentario.fk_id_producto = producto.id_producto");
+    $sentencia = $this->db->prepare("SELECT comentario.*, producto.*, usuario.* FROM comentario INNER JOIN producto ON comentario.fk_id_producto = producto.id_producto INNER JOIN usuario ON comentario.fk_id_usuario = usuario.id_usuario");
     $sentencia->execute();
     $comentario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
+    print_r($comentario);
     return $comentarios;
   }
 

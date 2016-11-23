@@ -42,14 +42,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li class="index"><a href="#">Home</a></li>
-                  <li class="nosotros"><a href="#">Nosotros <span class="sr-only">(current)</span></a></li>
-                  <li class="contacto"><a href="#">Contacto</a></li>
-                  <li class="venta"><a href="#">Venta</a></li>
-                  <li class="productos"><a href="#">Productos</a></li>
+                  <li class="index"><a>Home</a></li>
+                  <li class="nosotros"><a >Nosotros <span class="sr-only">(current)</span></a></li>
+                  <li class="contacto"><a>Contacto</a></li>
+                  <li class="venta"><a >Venta</a></li>
+                  <li class="productos"><a >Productos</a></li>
 
                     {if ($permiso==1)}
-                  <li class="abm"><a href="#">ABM</a></li>
+                  <li class="abm"><a>ABM</a></li>
                   {/if}
                   {if (!$nombre=="")}
                 <li class="abm">Bienvenido {$nombre}</li>
@@ -57,9 +57,9 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="login"><a href="#">Sesión</a></li>
-                  <li class="register"><a href="#">Registro</a></li>
-                  <li class="logout"><a href="#">Salir</a></li>
+                  <li class="login"><a>Sesión</a></li>
+                  <li class="register"><a >Registro</a></li>
+                  <li class="logout"><a>Salir</a></li>
                 </ul>
 
 

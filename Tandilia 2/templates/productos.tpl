@@ -26,7 +26,6 @@
         <input class="btn btn-default btn-filtro-cat" type="submit" name="Enviar">
       </div>
     </form>
-
     <div class="col-md-12 prodprueba" id="listaProducto" >
       {include file="productoslista.tpl"}
     </div>

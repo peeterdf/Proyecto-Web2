@@ -6,6 +6,8 @@ class ConfigApp{
   public static $ACTION_GUARDAR_PRODUCTO = 'guardar_producto';
   public static $ACTION_EDITAR_PRODUCTO = 'editar_producto';
   public static $ACTION_ELIMINAR_PRODUCTO = 'eliminar_producto';
+  public static $ACTION_AMPLIAR_PRODUCTO = 'ampliar_producto';
+
   public static $ACTION_CARGAR_ABM = 'cargar_abm';
   public static $ACTION_CARGAR_TABLA_VENTAS = 'muestra_tabla_ventas';
 
