@@ -19,9 +19,7 @@ class TandiliaController
     session_start();
     $permiso=0;
     $nombre="";
-    print_r($_SESSION);
     if (isset($_SESSION["user"])){
-      echo "entro";
       $permiso=$_SESSION["permiso"];
       $nombre=($_SESSION["user"]);
     }
