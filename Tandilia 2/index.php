@@ -1,15 +1,16 @@
 <?php
-require('controllers/ProductosController.php');
-require('controllers/CategoriasController.php');
-require('controllers/TandiliaController.php');
-require('controllers/LoginController.php');
-require ('config/ConfigApp.php');
+require_once('controllers/ProductosController.php');
+require_once('controllers/CategoriasController.php');
+require_once('controllers/TandiliaController.php');
+require_once('controllers/LoginController.php');
+require_once('controllers/ContactoController.php');
+require_once('config/ConfigApp.php');
 
 $productoscontroller = new ProductosController();
 $categoriascontroller = new CategoriasController();
 $tandiliacontroller = new TandiliaController();
 $logincontroller = new LoginController();
-
+$contactocontroller = new ContactoController();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   $tandiliacontroller->iniciar();
@@ -58,6 +59,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
       break;
   case ConfigApp::$ACTION_FILTRA_CATEGORIA:
     $categoriascontroller->filtraCategoria();
+      break;
+  case ConfigApp::$ACTION_GUARDAR_CONSULTA:
+    $contactocontroller->guardarConsulta();
       break;
   default:
     $tandiliacontroller->iniciar();

@@ -18,7 +18,7 @@ class LoginView
     $this->smarty->display('registro.tpl');
   }
 
-  function mostrar(){
+  function mostrarlogin(){
     $this->smarty->display('login.tpl');
   }
 

@@ -1,24 +1,24 @@
 <article>
   <h1>Consultenos</h1>
-  <form class="form-horizontal col-md-6">
+<form class="form-horizontal formcontacto col-md-6" method="post" href="index.php?action=guardar_consulta">
       <div class="form-group">
           <!--<label for="inputPassword3" class="col-sm-2 control-label">Nombre</label> -->
           <div class="">
-            <input type="name" class="form-control" id="inputEmail3" placeholder="Nombre">
+            <input type="text" name="nombre"class="form-control" id="inputEmail3" placeholder="Nombre">
           </div>
         </div>
 
       <div class="form-group">
         <!--<label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
         <div class="">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Example@mail.com">
+          <input type="email" name="email"  class="form-control" id="inputEmail3" placeholder="Example@mail.com">
         </div>
       </div>
 
       <div class="form-group">
         <!--<label for="inputPassword3" class="col-sm-2 control-label">Asunto</label> -->
         <div class="">
-          <input type="asunto" class="form-control" id="inputEmail3" placeholder="Asunto">
+          <input type="text" name="asunto" class="form-control" id="inputEmail3" placeholder="Asunto">
         </div>
       </div>
 

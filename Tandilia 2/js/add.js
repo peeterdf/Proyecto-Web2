@@ -113,6 +113,23 @@ $(document).on("submit", ".form-signin", function(event)
      });
  });
 
+ $(document).on("submit", ".formcontacto", function(event)
+ {
+     event.preventDefault();
+     var url=$(this).attr("href");
+     $.ajax({
+         url: url,
+         type: $(this).attr("method"),
+         data: new FormData(this),
+         processData: false,
+         contentType: false,
+         success: function (data)
+         {
+           $('.page').html(data);
+         },
+     });
+ });
+
  $(document).on('click','.eliminarProducto', function(){
    event.preventDefault();
    $.get( "index.php?action=eliminar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {

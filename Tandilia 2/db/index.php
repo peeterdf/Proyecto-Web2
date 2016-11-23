@@ -8,7 +8,7 @@ $smarty = new Smarty();
 if(isset($_POST["host"]) && isset($_POST["user"]) && isset($_POST["db-pw"]) && isset($_POST["dbname"])){
 
   try {
-      $conexionValida = new PDO('mysql:host=localhost;charset=utf8', $_POST["user"], $_POST["db-pw"]);
+      $conexionValida = new PDO('mysql:host='.$_POST["host"].';charset=utf8', $_POST["user"], $_POST["db-pw"]);
   } catch (PDOException $e) {
     $conexionValida = false;
   }

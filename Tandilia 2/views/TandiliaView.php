@@ -11,7 +11,10 @@ class TandiliaView
     $this->smarty = new Smarty();
   }
 
-  function mostrar(){
+  function mostrar($permiso,$nombre){
+
+    $this->smarty->assign('permiso',$permiso);
+    $this->smarty->assign('nombre',$nombre);
     $this->smarty->display('index.tpl');
   }//tandilia
 

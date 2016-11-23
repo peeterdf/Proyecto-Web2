@@ -47,7 +47,13 @@
                   <li class="contacto"><a href="#">Contacto</a></li>
                   <li class="venta"><a href="#">Venta</a></li>
                   <li class="productos"><a href="#">Productos</a></li>
+
+                    {if ($permiso==1)}
                   <li class="abm"><a href="#">ABM</a></li>
+                  {/if}
+                  {if (!$nombre=="")}
+                <li class="abm">Bienvenido {$nombre}</li>
+                {/if}
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

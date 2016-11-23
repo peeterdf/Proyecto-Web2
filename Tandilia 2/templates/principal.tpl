@@ -2,6 +2,8 @@
   <div class="caption-full">
         <p>
           Bienvenido a este espacio creado para conocer más profundamente a la cerveza artesanal Tandilia.
+        </p>
+        <p>
           Aquí encontrarás toda la información necesaria sobre nuestros exclusivos productos.
           No probarla es un pecado.
         </p>
