@@ -23,7 +23,10 @@ class ProductosController
 
   function ampliarproducto(){
     session_start();
-    $usuario=$_SESSION;
+    if( isset($_SESSION['user'])){
+    $usuario=$_SESSION;}else {
+      $usuario=null;
+    }
     $id_producto = $_GET['id_producto'];
     $producto = $this->pmodelo->getProducto($id_producto);
     $this->vista->mostrarproducto($producto,$usuario);

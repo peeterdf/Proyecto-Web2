@@ -49,20 +49,18 @@
                   <li class="productos"><a >Productos</a></li>
 
                   {if ($permiso==1)}
-                <li class="nav navbar-nav">
-                  <div class="dropdown open">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                    Administrar
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item adminUsers" href="#">Usuarios</a>
-                    <a class="dropdown-item adminCometarios" href="#">comentarios</a>
-                    <a class="dropdown-item adminItems" href="#">Items</a>
-                  </div>
-                  </div>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item adminUsers" href="#">Usuarios</a></li>
+                    <li><a class="dropdown-item adminCometarios" href="#">comentarios</a></li>
+                    <li><a class="dropdown-item adminItems" href="#">Items</a></li>
+                  </ul>
                 </li>
                 {/if}
-
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                   {if (!$nombre=="")}
                 <li><a>Bienvenido {$nombre}</a></li>
                 <li class="logout"><a>Salir</a></li>
@@ -70,10 +68,10 @@
                   <li class="login"><a>Sesión</a></li>
                   <li class="register"><a >Registro</a></li>
                 {/if}
-
-
-
                 </ul>
+
+
+
 
 
             </div>
