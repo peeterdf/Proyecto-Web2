@@ -21,7 +21,6 @@ class LoginController
       $pass = $_POST["pass"];
       $userReg = $this->modelo->getUser($user);
       $passReg = $userReg["pass"];
-
       if(password_verify($pass, $passReg)){
         session_start();
         $_SESSION["id"] = $userReg["id_usuario"];
@@ -68,6 +67,23 @@ class LoginController
       header("Location: index.php");
       die();
     }
+
+    function eliminarUsuario(){
+  $id_usuario = $_GET['id_usuario'];
+  $this->modelo->eliminarUsuario($id_usuario);
+  $this->cargarUsuarios();
+}
+
+  function editarPrivilegio() {
+    $id_usuario = $_GET['id_usuario'];
+    $this->modelo->editarPrivilegio($id_usuario);
+    $this->cargarUsuarios();
+  }
+
+  function cargarUsuarios(){
+    $usuarios = $this->modelo->getUsers();
+    $this->vista->mostrarusuarios($usuarios);
+  }
 
 }
 

@@ -22,9 +22,11 @@ class ProductosController
   }
 
   function ampliarproducto(){
+    session_start();
+    $usuario=$_SESSION;
     $id_producto = $_GET['id_producto'];
     $producto = $this->pmodelo->getProducto($id_producto);
-    $this->vista->mostrarproducto($producto);
+    $this->vista->mostrarproducto($producto,$usuario);
   }
 
   function getImagenesVerificadas($imagenes){
@@ -82,5 +84,25 @@ class ProductosController
     $this->cargarabm();
   }
 
+  function mostrarImg(){
+  $id_producto = $_POST['id_producto'];
+  $imagenes = $this->pmodelo->getImagenes($id_producto);
+  $this->vista->mostrarImg($imagenes);
+}
+
+function agregarImagenes(){
+  $id_producto = $_POST['id_producto'];
+  if(isset($_FILES['imagenes'])){
+    $imagenesVerificadas = $this->getImagenesVerificadas($_FILES['imagenes']);
+    if(count($imagenesVerificadas)>0){
+      $this->pmodelo->cargaImg($id_producto,$imagenesVerificadas);
+    }
+  }
+  $this->cargarabm();
+}
+
+function eliminarImagen(){
+    $this->mostrarImg();
+}
 }
  ?>

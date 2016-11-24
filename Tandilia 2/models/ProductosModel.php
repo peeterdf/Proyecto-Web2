@@ -67,5 +67,15 @@ class ProductosModel extends Model{
     }
   }
 
+  function cargaImg($id_producto,$imagenes){
+    foreach ($imagenes as $key => $imagen) {
+      $path="images/".uniqid()."_".$imagen["name"];
+      move_uploaded_file($imagen["tmp_name"], $path);
+      $insertImagen = $this->db->prepare("INSERT INTO imagen(path,fk_id_producto) VALUES(?,?)");
+      $insertImagen->execute(array($path,$id_producto));
+     }
+  }
+
+
 }
  ?>

@@ -157,6 +157,51 @@
       </form>
     </div>
 
+    <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-agregaimg btn btn-default">Agregar Imagenes</button>
+
+  <div class="ocultarabm agregaimg col-md-11 col-md-offset-1">
+    <form class="form-vertical  formularioabm col-md-10 col-md-offset-1 margen"  id="formProductos" href="index.php?action=agregar_imagenes" method="post" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nombre</label>
+        <select name="id_producto">
+            {foreach from=$productos item=producto}
+            <option  value="{$producto['id_producto']}">{$producto["nombre"]}</option>
+            {/foreach}
+        </select>
+      </div>
+
+      <div class="form-group">
+      <label class="col-sm-2 control-label">Imagenes</label>
+      <input type="file" name="imagenes[]" required value="" multiple>
+      </div>
+
+      <div class="col-sm-offset-2 col-sm-10">
+          <input class=" btn btn-default" type="submit" name="Enviar">
+      </div>
+    </form>
+  </div>
+
+  <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-eliminaimg btn btn-default">Eliminar Imagenes</button>
+
+  <div class="ocultarabm eliminaimg col-md-11 col-md-offset-1">
+    <form class="form-vertical  formularioabm col-md-10 col-md-offset-1 margen"  id="formProductos" href="index.php?action=eliminar_imagen" method="post" enctype="multipart/form-data">
+
+      <select name="id_producto">
+          {foreach from=$productos item=producto}
+          <option  value="{$producto['id_producto']}">{$producto["nombre"]}</option>
+          {/foreach}
+
+          {foreach from=$producto['imagenes'] key=index item=imagen}
+          <img src="{$imagen['path']}" alt="ProductoImagen_{$producto['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail imgproducto">
+          <td>  <a class="eliminarImagen" href="#" data-idimagen="{$imagen['id_imagen']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+          {/foreach}
+      </select>
+      <div class="col-sm-offset-2 col-sm-10">
+          <input class=" btn btn-default" type="submit" name="Enviar">
+      </div>
+    </form>
+  </div>
 
     </div>
 

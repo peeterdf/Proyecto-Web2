@@ -8,6 +8,13 @@ class ConfigApp{
   public static $ACTION_ELIMINAR_PRODUCTO = 'eliminar_producto';
   public static $ACTION_AMPLIAR_PRODUCTO = 'ampliar_producto';
 
+  public static $ACTION_ADMIN_USUARIOS = 'administrar_usuarios';
+  public static $ACTION_ELIMINAR_USUARIO = 'eliminar_usuario';
+  public static $ACTION_EDITAR_USUARIO = 'editar_usuario';
+  public static $ACTION_ADMIN_COMENTARIOS = 'administrar_comentarios';
+
+  public static $ACTION_ELIMINAR_COMENTARIO = 'eliminar_comentario';
+
   public static $ACTION_CARGAR_ABM = 'cargar_abm';
   public static $ACTION_CARGAR_TABLA_VENTAS = 'muestra_tabla_ventas';
 
@@ -15,6 +22,9 @@ class ConfigApp{
   public static $ACTION_ELIMINAR_CATEGORIA = 'eliminar_categoria';
   public static $ACTION_EDITAR_CATEGORIA = 'editar_categoria';
   public static $ACTION_FILTRA_CATEGORIA = 'filtra_categoria';
+
+  public static $ACTION_AGREGAR_IMAGENES = 'agregar_imagenes';
+  public static $ACTION_ELIMINAR_IMAGEN = 'eliminar_imagen';
 
   public static $ACTION_GUARDAR_CONSULTA= 'guardar_consulta';
 

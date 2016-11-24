@@ -11,13 +11,19 @@ class ProductosView
     $this->smarty = new Smarty();
   }
 
+  function mostrarImg($imagenes) {
+    $this->smarty->assign('imagenes',$imagenes);
+    $this->smarty->display('abm.tpl');
+  }
+
   function mostrarproductos($productos, $categorias) {
     $this->smarty->assign('productos',$productos);
     $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('productos.tpl');
   }//productoyCategoria
 
-  function mostrarproducto($producto) {
+  function mostrarproducto($producto,$usuario) {
+    $this->smarty->assign('usuario',$usuario);
     $this->smarty->assign('producto',$producto);
     $this->smarty->display('producto.tpl');
   }

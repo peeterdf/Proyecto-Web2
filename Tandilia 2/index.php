@@ -69,6 +69,21 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_GUARDAR_CONSULTA:
     $contactocontroller->guardarConsulta();
       break;
+  case ConfigApp::$ACTION_ADMIN_USUARIOS:
+    $logincontroller->cargarUsuarios();
+      break;
+  case ConfigApp::$ACTION_ELIMINAR_USUARIO:
+    $logincontroller->eliminarUsuario();
+      break;
+  case ConfigApp::$ACTION_EDITAR_USUARIO:
+    $logincontroller->editarPrivilegio();
+      break;
+  case ConfigApp::$ACTION_AGREGAR_IMAGENES:
+    $productoscontroller->agregarImagenes();
+      break;
+  case ConfigApp::$ACTION_ELIMINAR_IMAGEN:
+    $productoscontroller->eliminarImagen();
+      break;      
   default:
     $tandiliacontroller->iniciar();
     break;

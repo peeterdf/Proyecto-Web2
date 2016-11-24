@@ -18,6 +18,11 @@ class LoginView
     $this->smarty->display('registro.tpl');
   }
 
+  function mostrarusuarios($usuarios){
+    $this->smarty->assign('usuarios',$usuarios);
+    $this->smarty->display('abmUsuario.tpl');
+  }
+
   function mostrarlogin(){
     $this->smarty->display('login.tpl');
   }

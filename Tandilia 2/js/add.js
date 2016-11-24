@@ -32,22 +32,27 @@ $(document).ready(function() {
         });
   });
 
-  $(".ampliarproducto").click(function() {
-    $('.page').load('templates/producto.tpl');
-  });
+
 
   $(document).on('click','.ampliarproducto', function(){
     event.preventDefault();
     $.get( "index.php?action=ampliar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
     $('.page').html(data);
+    cargarComentarios();
    });
  });
 
-  $(".abm").click(function() {
-    $.get( "index.php?action=cargar_abm", function(data) {
-        $('.page').html(data);
-    });
-  });
+ $(".adminItems").click(function() {
+ $.get( "index.php?action=cargar_abm", function(data) {
+     $('.page').html(data);
+ });
+});
+
+$(".adminUsers").click(function() {
+ $.get( "index.php?action=administrar_usuarios", function(data) {
+     $('.page').html(data);
+ });
+});
 
   $(".productos").click(function(){
     event.preventDefault();
@@ -74,8 +79,16 @@ $(document).on('click','.btn-agregaprod',function() {
   $('.mostrarprod').toggle();
 });
 
+$(document).on('click','.btn-eliminaimg',function() {
+  $('.eliminaimg').toggle();
+});
+
 $(document).on('click','.btn-editacat',function() {
   $('.editacat').toggle();
+});
+
+$(document).on('click','.btn-agregaimg',function() {
+  $('.agregaimg').toggle();
 });
 
 $(document).on('click','.btn-agregacat',function() {
@@ -89,6 +102,29 @@ $(document).on('click','.btn-borrarcat',function() {
 $(document).on('click','.btn-editaprod',function() {
   $('.editaprod').toggle();
 });
+
+var template;
+  $.ajax({ url: 'js/templates/tarea.mst',
+   success: function(templateReceived) {
+     template = templateReceived;
+   }
+ });
+
+function cargarComentarios(){
+ $.ajax(
+     {
+       method:"GET",
+       dataType: "JSON",
+       url: "api/comentario",
+       success: createComentarios
+     }
+   )
+};
+ function createComentarios(comentarios){
+       var rendered = Mustache.render(template,{comentarios});
+       $('.comentarios').html(rendered);
+
+  };
 
 $(document).on("submit", ".form-signin", function(event)
 {
@@ -140,6 +176,27 @@ $(document).on("submit", ".form-signin", function(event)
          },
      });
  });
+
+ $(document).on('click','.eliminarUsuario', function(){
+   event.preventDefault();
+   $.get( "index.php?action=eliminar_usuario",{ id_usuario: $(this).attr("data-idusuario") }, function(data) {
+   $('.page').html(data);
+  });
+});
+
+//$(document).on('click','.eliminarImagen', function(){
+//  event.preventDefault();
+//  $.get( "index.php?action=eliminar_imagen",{ id_imagen: $(this).attr("data-imagen") }, function(data) {
+//  $('.page').html(data);
+ //});
+//});
+
+$(document).on('click','.editarPrivilegio', function(){
+  event.preventDefault();
+  $.get( "index.php?action=editar_usuario",{ id_usuario: $(this).attr("data-idusuario") }, function(data) {
+  $('.page').html(data);
+ });
+});
 
  $(document).on('click','.eliminarProducto', function(){
    event.preventDefault();

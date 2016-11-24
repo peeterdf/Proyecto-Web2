@@ -48,18 +48,31 @@
                   <li class="venta"><a >Venta</a></li>
                   <li class="productos"><a >Productos</a></li>
 
-                    {if ($permiso==1)}
-                  <li class="abm"><a>ABM</a></li>
-                  {/if}
-                  {if (!$nombre=="")}
-                <li class="abm">Bienvenido {$nombre}</li>
+                  {if ($permiso==1)}
+                <li class="nav navbar-nav">
+                  <div class="dropdown open">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    Administrar
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item adminUsers" href="#">Usuarios</a>
+                    <a class="dropdown-item adminCometarios" href="#">comentarios</a>
+                    <a class="dropdown-item adminItems" href="#">Items</a>
+                  </div>
+                  </div>
+                </li>
                 {/if}
-                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
+                  {if (!$nombre=="")}
+                <li><a>Bienvenido {$nombre}</a></li>
+                <li class="logout"><a>Salir</a></li>
+                {else}
                   <li class="login"><a>Sesión</a></li>
                   <li class="register"><a >Registro</a></li>
-                  <li class="logout"><a>Salir</a></li>
+                {/if}
+
+
+
                 </ul>
 
 
