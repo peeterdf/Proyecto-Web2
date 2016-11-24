@@ -14,10 +14,14 @@ class ComentarioApi extends Api
   }
 
   protected function comentario($argumentos){
+//    session_start();
+ //if (isset ($SESSION["nombre"])){
+//   if($SESSION["permiso"]>0){
+
     switch ($this->method) {
       case 'GET':
           if(count($argumentos)>0){
-            $comentario = $this->model->getComentario($argumentos[0]);
+            $comentario = $this->model->getComentarioprod($argumentos[0]);
             $error['Error'] = "El comentario no existe";
             $error['comentario'] = $comentario;
             return ($comentario) ? $comentario : $error;
@@ -43,7 +47,9 @@ class ComentarioApi extends Api
       default:
            return "Only accepts GET";
         break;
-    }
+        }
+      //} //return "no tiene permiso";
+      //}//else return "No tiene session";
    }
 
 }

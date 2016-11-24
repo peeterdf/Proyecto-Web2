@@ -6,19 +6,19 @@ class ComentarioModel extends Model{
   function __construct() {
     parent::__construct();
   }
-  function getComentario($id_comentario) {
-    $sentencia = $this->db->prepare("SELECT comentario.*, producto.nombre AS nombre_producto  FROM comentario INNER JOIN producto ON comentario.fk_id_producto = producto.id_producto  WHERE id_comentario=?");
-    $sentencia->execute(array($id_comentario));
-    $comentario = $sentencia->fetch(PDO::FETCH_ASSOC);
+  function getComentarioprod($id_producto) {
+    //$sentencia = $this->db->prepare("SELECT comentario.*, producto.nombre AS nombre_producto  FROM comentario INNER JOIN producto ON comentario.fk_id_producto = producto.id_producto  WHERE id_comentario=?");
+    $sentencia = $this->db->prepare("SELECT comentario.*,usuario.nombre FROM comentario INNER JOIN usuario ON comentario.fk_id_usuario = usuario.id_usuario WHERE fk_id_producto=? ");
+    $sentencia->execute(array($id_producto));
+    $comentarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-    return $comentario;
+    return $comentarios;
   }
 
   function getComentarios() {
-    $sentencia = $this->db->prepare("SELECT comentario.*, producto.*, usuario.* FROM comentario INNER JOIN producto ON comentario.fk_id_producto = producto.id_producto INNER JOIN usuario ON comentario.fk_id_usuario = usuario.id_usuario");
+    $sentencia = $this->db->prepare("SELECT comentario.*, producto.nombre, usuario.nombre FROM comentario INNER JOIN producto ON comentario.fk_id_producto = producto.id_producto INNER JOIN usuario ON comentario.fk_id_usuario = usuario.id_usuario");
     $sentencia->execute();
-    $comentario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    print_r($comentario);
+    $comentarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $comentarios;
   }
 

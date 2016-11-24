@@ -15,6 +15,10 @@ body {
   color: black;
 }
 
+.scategoria{
+  font-size: 20px;
+}
+
 .cat_prod {
   color:black;
   margin: 10px;

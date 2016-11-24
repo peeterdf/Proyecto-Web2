@@ -42,38 +42,36 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li class="index"><a>Home</a></li>
-                  <li class="nosotros"><a >Nosotros <span class="sr-only">(current)</span></a></li>
-                  <li class="contacto"><a>Contacto</a></li>
-                  <li class="venta"><a >Venta</a></li>
-                  <li class="productos"><a >Productos</a></li>
+                  <li class="index"><a href="">Home</a></li>
+                  <li class="nosotros"><a href="">Nosotros <span class="sr-only">(current)</span></a></li>
+                  <li class="contacto"><a href="">Contacto</a></li>
+                  <li class="venta"><a href="">Venta</a></li>
+                  <li class="productos"><a href="">Productos</a></li>
 
                   {if ($permiso==1)}
-                <li class="nav navbar-nav">
-                  <div class="dropdown open">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                    Administrar
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item adminUsers" href="#">Usuarios</a>
-                    <a class="dropdown-item adminCometarios" href="#">comentarios</a>
-                    <a class="dropdown-item adminItems" href="#">Items</a>
-                  </div>
-                  </div>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item adminUsers" href="#">Usuarios</a></li>
+                    <li><a class="dropdown-item adminCometarios" href="#">comentarios</a></li>
+                    <li><a class="dropdown-item adminItems" href="#">Items</a></li>
+                  </ul>
                 </li>
                 {/if}
-
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                   {if (!$nombre=="")}
-                <li><a>Bienvenido {$nombre}</a></li>
+                <li><a href="">Bienvenido {$nombre}</a></li>
                 <li class="logout"><a>Salir</a></li>
                 {else}
                   <li class="login"><a>Sesión</a></li>
                   <li class="register"><a >Registro</a></li>
                 {/if}
-
-
-
                 </ul>
+
+
+
 
 
             </div>

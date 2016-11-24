@@ -38,7 +38,8 @@ $(document).ready(function() {
     event.preventDefault();
     $.get( "index.php?action=ampliar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
     $('.page').html(data);
-    cargarComentarios();
+    var id_producto=$(".comentarios").attr('data-idproducto');
+    obtenerComentarios(id_producto);
    });
  });
 
@@ -68,6 +69,56 @@ $(".adminUsers").click(function() {
       $('.page').html(data);
     });
   });
+
+
+  var template;
+  var repetidor;
+  function obtenerComentarios(id_producto){
+    $.ajax({ url: 'js/templates/comentario.mst',
+    success: function(templateReceived) {
+      template = templateReceived;
+    }
+  });
+  clearInterval(repetidor);
+  function get() {
+    url="api/comentario/"+id_producto;
+    $.get( url, function(data) {
+      var datos = [];
+      for (var i = 0; i < data.length; i++) {
+          datos.push(data[i]);
+      }
+      var rendered = Mustache.render(template,{comentarios:datos});
+      $(".comentarios").html(rendered);
+    });
+  }
+  get();
+  repetidor = setInterval(get, 2000);
+
+}
+
+  //var template;
+  //  $.ajax({ url: 'js/templates/comentario.mst',
+  //   success: function(templateReceived) {
+  //     template = templateReceived;
+  //   }
+   //});
+
+  function cargarComentarios(){
+   $.ajax(
+       {
+         method:"GET",
+         dataType: "JSON",
+         url: "api/comentario",
+         success: createComentarios
+       }
+     )
+  };
+
+   function createComentarios(comentarios){
+         var rendered = Mustache.render(template,{comentarios});
+         $('.comentarios').html(rendered);
+
+    };
 
 });
 
@@ -103,28 +154,6 @@ $(document).on('click','.btn-editaprod',function() {
   $('.editaprod').toggle();
 });
 
-var template;
-  $.ajax({ url: 'js/templates/tarea.mst',
-   success: function(templateReceived) {
-     template = templateReceived;
-   }
- });
-
-function cargarComentarios(){
- $.ajax(
-     {
-       method:"GET",
-       dataType: "JSON",
-       url: "api/comentario",
-       success: createComentarios
-     }
-   )
-};
- function createComentarios(comentarios){
-       var rendered = Mustache.render(template,{comentarios});
-       $('.comentarios').html(rendered);
-
-  };
 
 $(document).on("submit", ".form-signin", function(event)
 {
