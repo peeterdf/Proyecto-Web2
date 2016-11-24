@@ -12,7 +12,6 @@ class UserModel extends Model{
     $consulta = $this->db->prepare("SELECT * FROM usuario WHERE email=?");
     $consulta->execute(array($email));
     $usuario =$consulta->fetch(PDO::FETCH_ASSOC);
-    print_r($usuario);
     return ($usuario) ? true: false;
 
   }

@@ -86,7 +86,9 @@ $(".adminUsers").click(function() {
       var datos = [];
       for (var i = 0; i < data.length; i++) {
           datos.push(data[i]);
+          alert("netro  ");
       }
+      alert(datos);
       var rendered = Mustache.render(template,{comentarios:datos});
       $(".comentarios").html(rendered);
     });

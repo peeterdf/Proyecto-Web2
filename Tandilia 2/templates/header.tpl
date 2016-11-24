@@ -65,7 +65,7 @@
                 <li><a href="">Bienvenido {$nombre}</a></li>
                 <li class="logout"><a>Salir</a></li>
                 {else}
-                  <li class="login"><a>Sesión</a></li>
+                  <li class="login"><a>Iniciar Sesión</a></li>
                   <li class="register"><a >Registro</a></li>
                 {/if}
                 </ul>
