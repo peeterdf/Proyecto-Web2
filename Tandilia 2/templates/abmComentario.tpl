@@ -9,9 +9,9 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Comentario</th>
             <th>Usuario</th>
-            <th>Producto</th>
+            <th>Comentario</th>
+            <th>Puntuacion</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -19,9 +19,9 @@
           {foreach from=$comentarios item=comentario}
           <tr>
             <td>{$comentario["nombre"]}</td>
-            <td>{$comentario["email"]}</td>
-            <td>{$comentario["admin"]}</td>
-            <td>  <a class="eliminarComentario" href="#" data-idusuario="{$comentario['id_comentario']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+            <td>{$comentario["textocomentario"]}</td>
+            <td>{$comentario["puntuacion"]}</td>
+            <td>  <a class="eliminarComentario" href="#" data-idcomentario="{$comentario['id_comentario']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
           </tr>
           {/foreach}
         </tbody>

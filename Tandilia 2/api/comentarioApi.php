@@ -38,9 +38,9 @@ class ComentarioApi extends Api
           }
         break;
         case 'POST':
+        print_r($_POST);
             if(count($argumentos)==0){
               $error['Error'] = "El comentario no se creo";
-              print_r($_POST);
               $id_comentario = $this->model->crearComentario($_POST);//id usuario, id producto, comentario, puntaje
               return ($id_comentario > 0) ? json_encode($this->model->getcomentario($id_comentario)) : $error;
             }

@@ -182,26 +182,21 @@
     </form>
   </div>
 
-  <button type="button" name="button"class="col-md-10 col-md-offset-1 btn-eliminaimg btn btn-default">Eliminar Imagenes</button>
+  <button type="button" href="index.php?action=mostrar_imagenes" name="button"class="col-md-10 col-md-offset-1 btn-eliminaimg btn btn-default">Eliminar Imagenes</button>
+            <div class="ocultarabm eliminaimg col-md-11 col-md-offset-1">
+                <div class="form-group">
+                  {foreach from=$productos item=producto}
+                  {foreach from=$producto['imagenes'] item=imagen}
+                    <img src="{$imagen['path']}"  class="img-thumbnail imgproducto">
+                    <a class="eliminarImagen" href="#" data-idimagen="{$imagen['id_imagen']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                  {/foreach}
+                  {/foreach}
 
-  <div class="ocultarabm eliminaimg col-md-11 col-md-offset-1">
-    <form class="form-vertical  formularioabm col-md-10 col-md-offset-1 margen"  id="formProductos" href="index.php?action=eliminar_imagen" method="post" enctype="multipart/form-data">
+                </div>
+                <form class="form-vertical  formularioabm col-md-10 col-md-offset-1 margen"  id="formProductos" href="index.php?action=eliminar_imagen" method="post" enctype="multipart/form-data">
 
-      <select name="id_producto">
-          {foreach from=$productos item=producto}
-          <option  value="{$producto['id_producto']}">{$producto["nombre"]}</option>
-          {/foreach}
-
-          {foreach from=$producto['imagenes'] key=index item=imagen}
-          <img src="{$imagen['path']}" alt="ProductoImagen_{$producto['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail imgproducto">
-          <td>  <a class="eliminarImagen" href="#" data-idimagen="{$imagen['id_imagen']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-          {/foreach}
-      </select>
-      <div class="col-sm-offset-2 col-sm-10">
-          <input class=" btn btn-default" type="submit" name="Enviar">
-      </div>
-    </form>
-  </div>
+              </form>
+            </div>
 
     </div>
 

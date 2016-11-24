@@ -11,8 +11,9 @@ class ConfigApp{
   public static $ACTION_ADMIN_USUARIOS = 'administrar_usuarios';
   public static $ACTION_ELIMINAR_USUARIO = 'eliminar_usuario';
   public static $ACTION_EDITAR_USUARIO = 'editar_usuario';
-  public static $ACTION_ADMIN_COMENTARIOS = 'administrar_comentarios';
 
+
+  public static $ACTION_ADMIN_COMENTARIOS = 'administrar_comentarios';
   public static $ACTION_ELIMINAR_COMENTARIO = 'eliminar_comentario';
 
   public static $ACTION_CARGAR_ABM = 'cargar_abm';

@@ -2,17 +2,20 @@
 require_once('views/ProductosView.php');
 require_once('models/ProductosModel.php');
 require_once('models/CategoriasModel.php');
+require_once('models/ComentarioModel.php');
 
 class ProductosController
 {
   private $vista;
   private $pmodelo;
   private $cmodelo;
+  private $comentmodel;
 
   function __construct(){
     $this->pmodelo = new ProductosModel();
     $this->cmodelo = new CategoriasModel();
     $this->vista = new ProductosView();
+    $this->comentmodel = new ComentarioModel();
   }
 
   function mostrarproductos(){
@@ -67,6 +70,10 @@ class ProductosController
       $this->vista->mostrarabm($productos, $categorias);
     }
 
+  function cargarComentarios(){
+    $comentarios= $this->comentmodel->getComentarios();
+    $this->vista->mostrarabmcomentario($comentarios);
+  }
 
     function editarProducto(){
       if(!empty($_POST['precio_min']) && !empty($_POST['precio_may'])) {
@@ -105,7 +112,16 @@ function agregarImagenes(){
 }
 
 function eliminarImagen(){
-    $this->mostrarImg();
-}
+  $id_imagen = $_GET['id_imagen'];
+  $this->pmodelo->eliminarImagen($id_imagen);
+  $this->cargarabm();
+
+  }
+
+  function eliminarComentario(){
+    $id_comentario = $_GET['id_comentario'];
+    $this->comentmodel->eliminarComentario($id_comentario);
+    $this->cargarComentarios();
+    }
 }
  ?>

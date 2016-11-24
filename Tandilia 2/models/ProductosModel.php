@@ -76,6 +76,12 @@ class ProductosModel extends Model{
      }
   }
 
+  function eliminarImagen($id_imagen) {
+  $sentencia = $this->db->prepare("DELETE FROM imagen WHERE id_imagen=? ");
+  $sentencia->execute(array($id_imagen));
+}
+
+
 
 }
  ?>

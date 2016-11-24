@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2016 a las 20:22:42
+-- Tiempo de generación: 24-11-2016 a las 09:00:05
 -- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.21
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,6 +43,61 @@ INSERT INTO `categoria` (`id_categoria`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `textocomentario` text NOT NULL,
+  `puntuacion` int(11) NOT NULL,
+  `fk_id_producto` int(11) NOT NULL,
+  `fk_id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `textocomentario`, `puntuacion`, `fk_id_producto`, `fk_id_usuario`) VALUES
+(14, 'la rubia pilsen me encanta', 4, 34, 37),
+(15, 'las cervezas rubias son mis favoritas', 5, 34, 36),
+(16, 'hagan cervezas para celiacos!!', 1, 36, 35),
+(17, 'mmmm, cerveza', 5, 36, 33),
+(18, 'aguante la duff!!', 3, 39, 36),
+(19, 'a winnie pooh le gusta esto', 3, 39, 36),
+(20, 'mi cerveza es mejor', 1, 40, 34),
+(21, 'ya no se que mas inventar', 1, 40, 37),
+(22, 'si no apareces, hay tabla', 3, 41, 35),
+(23, 'sin comida y sin cerveza homero pierde la cabeza', 3, 41, 34),
+(24, 'hay happy hour?', 5, 42, 36),
+(25, 'me gusta el vino y la joda', 5, 42, 36),
+(26, 'que lindo comentario', 5, 44, 37),
+(27, 'dos cajas por aca!', 5, 44, 35);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contacto`
+--
+
+CREATE TABLE `contacto` (
+  `id_contacto` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `asunto` varchar(50) NOT NULL,
+  `consulta` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`id_contacto`, `nombre`, `email`, `asunto`, `consulta`) VALUES
+(1, 'pepe', 'pepe@hotmail.com', 'tengo 30 pe', 'para que me alcanza? ');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `imagen`
 --
 
@@ -51,6 +106,26 @@ CREATE TABLE `imagen` (
   `path` varchar(500) NOT NULL,
   `fk_id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `imagen`
+--
+
+INSERT INTO `imagen` (`id_imagen`, `path`, `fk_id_producto`) VALUES
+(1, 'images/vasosdecerveza.jpg', 36),
+(2, 'images/cerveza-tirada.jpg', 34),
+(3, 'images/tonel.jpg', 42),
+(4, 'images/botellas.jpg', 36),
+(5, 'images/vasosdecerveza.jpg', 44),
+(6, 'images/vasosdecerveza.jpg', 42),
+(7, 'images/tonel.jpg', 39),
+(8, 'images/tonel.jpg', 41),
+(9, 'images/botellas.jpg', 39),
+(10, 'images/botellas.jpg', 34),
+(11, 'images/tonel.jpg', 40),
+(12, 'images/botellas.jpg', 40),
+(13, 'images/cerveza-tirada.jpg', 44),
+(14, 'images/cerveza-tirada.jpg', 41);
 
 -- --------------------------------------------------------
 
@@ -99,13 +174,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `pass`, `admin`) VALUES
-(1, 'Nacho', 'ignaciojonas@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(2, 'Javier', 'javier.dottori@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(3, 'Juan', 'juan.damato@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(4, 'Pedro', 'pedrodifonzo@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 1),
-(5, 'Eugenia', 'eugeniazelenka@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 1),
-(6, 'user1', 'user1@tandilia.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 0),
-(7, 'user2', 'user2@tandilia.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 0);
+(33, 'Eugenia', 'eugeniazelenka@gmail.com', '$2y$10$mn0sKaVqq4kWynpJXSVrCeNnhCLHySVCSuKt1468d3RkhwLAFcjM6', 0),
+(34, 'Nacho', 'ignaciojonas@gmail.com', '$2y$10$vt2UW7/y0pHlcNvoHeGsBuqY1preOiisbrilnguVmsmc8ijyzuCLe', 1),
+(35, 'Javier', 'javier.dottori@gmail.com', '$2y$10$DRAr2cR5cxMZ2WVHUAPFGeEzX60uJVBv5tLS5hlFyUO3qbPiY2zMa', 1),
+(36, 'Juan', 'juan.damato@gmail.com', '$2y$10$XftGTuaxlynJtqmhYOfWnejqyxOX1HLRfAyUAQTw/fYcq261oWO2a', 1),
+(37, 'Pedro', 'pedrodifonzo@gmail.com', '$2y$10$xKYD.uU.0f6VRHwPx2gIBeSyv0Aqul3u/ReD7Y/.mRe8vVkfZ.1Rq', 0);
 
 --
 -- Índices para tablas volcadas
@@ -116,6 +189,20 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `pass`, `admin`) VALUES
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `fk_id_producto` (`fk_id_producto`),
+  ADD KEY `fk_id_usuario` (`fk_id_usuario`);
+
+--
+-- Indices de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  ADD PRIMARY KEY (`id_contacto`);
 
 --
 -- Indices de la tabla `imagen`
@@ -147,10 +234,20 @@ ALTER TABLE `usuario`
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
@@ -160,10 +257,17 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`fk_id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`fk_id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `imagen`

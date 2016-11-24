@@ -34,6 +34,11 @@ class ProductosView
     $this->smarty->display('abm.tpl');
   }//todos
 
+  function mostrarabmcomentario($comentarios){
+    $this->smarty->assign('comentarios',$comentarios);
+    $this->smarty->display('abmComentario.tpl');
+  }
+
   function mostrarMensaje($mensaje, $tipo) {
     $this->smarty->assign('mensaje',$mensaje);
     $this->smarty->assign('tipoMensaje',$tipo);

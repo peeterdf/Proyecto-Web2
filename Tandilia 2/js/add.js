@@ -49,6 +49,11 @@ $(document).ready(function() {
  });
 });
 
+$(".adminComentarios").click(function() {
+$.get( "index.php?action=administrar_comentarios", function(data) {
+    $('.page').html(data);
+});
+});
 $(".adminUsers").click(function() {
  $.get( "index.php?action=administrar_usuarios", function(data) {
      $('.page').html(data);
@@ -83,13 +88,7 @@ $(".adminUsers").click(function() {
   function get() {
     url="api/comentario/"+id_producto;
     $.get( url, function(data) {
-      var datos = [];
-      for (var i = 0; i < data.length; i++) {
-          datos.push(data[i]);
-          alert("netro  ");
-      }
-      alert(datos);
-      var rendered = Mustache.render(template,{comentarios:datos});
+      var rendered = Mustache.render(template,{comentarios:data});
       $(".comentarios").html(rendered);
     });
   }
@@ -215,12 +214,12 @@ $(document).on("submit", ".form-signin", function(event)
   });
 });
 
-//$(document).on('click','.eliminarImagen', function(){
-//  event.preventDefault();
-//  $.get( "index.php?action=eliminar_imagen",{ id_imagen: $(this).attr("data-imagen") }, function(data) {
-//  $('.page').html(data);
- //});
-//});
+$(document).on('click','.eliminarImagen', function(){
+  event.preventDefault();
+  $.get( "index.php?action=eliminar_imagen",{ id_imagen: $(this).attr("data-idimagen") }, function(data) {
+  $('.page').html(data);
+ });
+});
 
 $(document).on('click','.editarPrivilegio', function(){
   event.preventDefault();
@@ -234,6 +233,13 @@ $(document).on('click','.editarPrivilegio', function(){
    $.get( "index.php?action=eliminar_producto",{ id_producto: $(this).attr("data-idproducto") }, function(data) {
    $('.page').html(data);
   });
+});
+
+$(document).on('click','.eliminarComentario', function(){
+  event.preventDefault();
+  $.get( "index.php?action=eliminar_comentario",{ id_comentario: $(this).attr("data-idcomentario") }, function(data) {
+  $('.page').html(data);
+ });
 });
 
 $(document).on('click','.eliminarCategoria', function(){

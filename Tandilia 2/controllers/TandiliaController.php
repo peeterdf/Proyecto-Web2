@@ -16,7 +16,7 @@ class TandiliaController
   }
 
   function iniciar(){
-    session_start();
+  //  session_start();
     $permiso=0;
     $nombre="";
     if (isset($_SESSION["user"])){

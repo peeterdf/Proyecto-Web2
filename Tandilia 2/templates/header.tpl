@@ -42,11 +42,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li class="index"><a href="">Home</a></li>
-                  <li class="nosotros"><a href="">Nosotros <span class="sr-only">(current)</span></a></li>
-                  <li class="contacto"><a href="">Contacto</a></li>
-                  <li class="venta"><a href="">Venta</a></li>
-                  <li class="productos"><a href="">Productos</a></li>
+                  <li class="index"><a >Home</a></li>
+                  <li class="nosotros"><a >Nosotros <span class="sr-only">(current)</span></a></li>
+                  <li class="contacto"><a >Contacto</a></li>
+                  <li class="venta"><a >Venta</a></li>
+                  <li class="productos"><a >Productos</a></li>
 
                   {if ($permiso==1)}
 
@@ -54,7 +54,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item adminUsers" href="#">Usuarios</a></li>
-                    <li><a class="dropdown-item adminCometarios" href="#">comentarios</a></li>
+                    <li><a class="dropdown-item adminComentarios" href="#">Comentarios</a></li>
                     <li><a class="dropdown-item adminItems" href="#">Items</a></li>
                   </ul>
                 </li>

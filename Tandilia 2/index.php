@@ -19,6 +19,8 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   die();
 }
 
+session_start();
+$logueado= isset($_SESSION["user"]);
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_INICIAR:
 
@@ -28,16 +30,16 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     $logincontroller->login();
     break;
   case ConfigApp::$ACTION_REGISTRAR:
-    $logincontroller->registrar_usuario();
+    if (!$logueado) $logincontroller->registrar_usuario();
     break;
   case ConfigApp::$ACTION_LOGOUT:
-    $logincontroller->logout();
+    if ($logueado) $logincontroller->logout();
     break;
   case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
-    $productoscontroller->guardar();
+  if ($logueado)    $productoscontroller->guardar();
     break;
   case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
-    $productoscontroller->eliminar();
+  if ($logueado)      $productoscontroller->eliminar();
     break;
   case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
     $productoscontroller->mostrarproductos();
@@ -46,22 +48,22 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     $productoscontroller->ampliarproducto();
     break;
   case ConfigApp::$ACTION_CARGAR_ABM:
-    $tandiliacontroller->cargarabm();
+  if ($logueado)   $tandiliacontroller->cargarabm();
     break;
   case ConfigApp::$ACTION_CARGAR_TABLA_VENTAS:
     $tandiliacontroller->muestraTablaVentas();
     break;
   case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
-    $categoriascontroller->guardarCategoria();
+    if ($logueado)   $categoriascontroller->guardarCategoria();
       break;
   case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
-    $categoriascontroller->eliminarCategoria();
+  if ($logueado)     $categoriascontroller->eliminarCategoria();
       break;
   case ConfigApp::$ACTION_EDITAR_PRODUCTO:
-    $productoscontroller->editarProducto();
+  if ($logueado)     $productoscontroller->editarProducto();
       break;
   case ConfigApp::$ACTION_EDITAR_CATEGORIA:
-    $categoriascontroller->editarCategoria();
+  if ($logueado)     $categoriascontroller->editarCategoria();
       break;
   case ConfigApp::$ACTION_FILTRA_CATEGORIA:
     $categoriascontroller->filtraCategoria();
@@ -70,20 +72,26 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     $contactocontroller->guardarConsulta();
       break;
   case ConfigApp::$ACTION_ADMIN_USUARIOS:
-    $logincontroller->cargarUsuarios();
+    if ($logueado)   $logincontroller->cargarUsuarios();
       break;
   case ConfigApp::$ACTION_ELIMINAR_USUARIO:
-    $logincontroller->eliminarUsuario();
+  if ($logueado)     $logincontroller->eliminarUsuario();
       break;
   case ConfigApp::$ACTION_EDITAR_USUARIO:
-    $logincontroller->editarPrivilegio();
+  if ($logueado)     $logincontroller->editarPrivilegio();
       break;
+  case ConfigApp::$ACTION_ADMIN_COMENTARIOS:
+    if ($logueado)   $productoscontroller->cargarComentarios();
+      break;
+      case ConfigApp::$ACTION_ELIMINAR_COMENTARIO:
+      if ($logueado)   $productoscontroller->eliminarComentario();
+          break;
   case ConfigApp::$ACTION_AGREGAR_IMAGENES:
-    $productoscontroller->agregarImagenes();
+    if ($logueado)   $productoscontroller->agregarImagenes();
       break;
   case ConfigApp::$ACTION_ELIMINAR_IMAGEN:
-    $productoscontroller->eliminarImagen();
-      break;      
+  if ($logueado)   $productoscontroller->eliminarImagen();
+      break;
   default:
     $tandiliacontroller->iniciar();
     break;
