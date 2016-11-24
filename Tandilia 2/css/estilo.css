@@ -7,6 +7,10 @@ body {
   background-attachment: fixed;
 }
 
+.right {
+  float:right; 
+}
+
 .margen {
   margin: 20px;
 }

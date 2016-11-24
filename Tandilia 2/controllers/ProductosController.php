@@ -25,7 +25,6 @@ class ProductosController
   }
 
   function ampliarproducto(){
-    session_start();
     if( isset($_SESSION['user'])){
     $usuario=$_SESSION;}else {
       $usuario=null;
